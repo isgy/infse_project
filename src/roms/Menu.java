@@ -17,7 +17,6 @@ public class Menu {
 	
 	public OfficeKVM ofkvm;
 	
-    public Menu menu;	
     public TreeMap<String, MenuItem> menuitems;
     
     public void setO(OfficeKVM o){
@@ -31,13 +30,13 @@ public class Menu {
    public String showMenu(){
 //      String ss = "";	
 	  String ss = "\nID" + String.format("%18s", "Description") + String.format("%12s", "Price");
-	  Set<Entry<String, MenuItem>> entrys = menuitems.entrySet();
-      for (Entry<String, MenuItem> menuitems : entrys) {
+	  Set<Entry<String, MenuItem>> ents = menuitems.entrySet();
+      for (Entry<String, MenuItem> menuitems : ents) {
     	  String id = menuitems.getKey();
     	  MenuItem item = menuitems.getValue();
          ss += "\n" + id + ", " + String.format("%15s", item.getDescription()) + ", " +  String.format("%10s", item.getPrice());
     	 //    ss += id + " " + item.getDescription() + " " +  item.getPrice();
-  }
+        }
       return ss;
     }
     public Menu(){ 

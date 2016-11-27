@@ -14,11 +14,12 @@ import java.util.List;
  *
  */
 public class Rack {
-       
+    private ArrayList<Ticket> rack;
+    
     /**
      * Format rack contents as list of strings, with, per order item in each
      * order, 6 strings for respectively:
-
+     
      * - Time - elapsed time in minutes since order submitted.
      * - Ticket number 
      * - MenuID identifying an order item on the ticket

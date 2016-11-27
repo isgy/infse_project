@@ -14,7 +14,11 @@ import java.util.List;
  *
  */
 public class TableDisplay extends AbstractIODevice {
-
+	
+	public Table table;
+    public void setT(Table table){
+    	this.table = table;
+    }
     
     /**
      * 
@@ -99,31 +103,43 @@ public class TableDisplay extends AbstractIODevice {
 
     public void startOrder() {
         logger.fine(getInstanceName());
-        // TO BE COMPLETED
+        table.newTicket();
     }
     public void showMenu() {
         logger.fine(getInstanceName());
-        // TO BE COMPLETED
+        table.showMenu();
+    }
+    public void dTableMenu(String m) {
+        List<String> args = new ArrayList<String>();
+	      //  String s = mm.toString(); 
+	    args.add(m); 
+	    sendMessage("viewMenu", args);
+    }
+    public void dTicket(String t) {
+        List<String> args = new ArrayList<String>();
+	      //  String s = mm.toString(); 
+	    args.add(t); 
+	    sendMessage("viewMenu", args);
     }
     public void showTicket() {
         logger.fine(getInstanceName());
-        // TO BE COMPLETED
+        table.showTicket();
     }
     public void addMenuItem(String menuID) {
         logger.fine(getInstanceName());
-        // TO BE COMPLETED
+        table.addMenuItem(menuID);
     }
     public void removeMenuItem(String menuID) {
         logger.fine(getInstanceName());
-        // TO BE COMPLETED
+        table.removeMenuItem(menuID);
     }
     public void submitOrder() {
         logger.fine(getInstanceName());
-        // TO BE COMPLETED
+        table.submitOrder();
     }
     public void payBill() {
         logger.fine(getInstanceName());
-        // TO BE COMPLETED
+        table.payBill();
     }
 
     /*

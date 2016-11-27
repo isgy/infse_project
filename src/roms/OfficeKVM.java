@@ -80,7 +80,12 @@ public class OfficeKVM extends AbstractIODevice {
      */
     
     
-    public Menu mm;
+    private Menu mm;
+    private BankClient bank;
+    
+    public void setBank(BankClient bank){
+    	this.bank = bank;
+    }
     
     public void setMenu(Menu m) {
     	logger.fine(getInstanceName());
@@ -91,21 +96,22 @@ public class OfficeKVM extends AbstractIODevice {
         logger.fine(getInstanceName());
       //  Menu m = mm.showm();
        // this.dmenu();
-        mm.showm();
+        mm.showm();                                         //showm calls the Treemap to String conversion function 
     }
     
     public void dmenu(String m){
+    	logger.fine(getInstanceName());
         List<String> args = new ArrayList<String>();
       //  String s = mm.toString(); 
-        args.add(m); 
+        args.add(m);                                      // is called by m.showm()
         sendMessage("viewMenu", args);
 
     }
  
     public void addToMenu(String menuID, String description, Money price) {
         logger.fine(getInstanceName());
-        MenuItem item = new MenuItem(menuID, description, price);
-        mm.addToMenu(item);
+        MenuItem item = new MenuItem(menuID, description, price);    //Initialises a MenuItem object
+        mm.addToMenu(item);                                             //adds to menu
         
     }
 

@@ -7,8 +7,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.TreeMap;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.Iterator;
+import java.lang.Boolean;
 /**
  * @author pbj
  *
@@ -16,13 +18,46 @@ import java.util.Iterator;
 public class Ticket {
  
     private String tableID;
+    public TreeMap<String, TicketItem> ticket;
     public String getTableID() { 
         return tableID; 
     }
     public Ticket(){ 
-    TreeMap<String, MenuItem> ticket = new TreeMap<>();
+    TreeMap<String, TicketItem> ticket = new TreeMap<>();
     }
-    
+    public void addToTicket(MenuItem item){
+    	String menuID = item.getmenuID();
+    	if (ticket.containsKey(menuID)){
+    		ticket.get(menuID).add();
+    	} else {
+    	ticket.put(menuID, new TicketItem(item));
+    	}
+    }
+    public void removeFromTicket(MenuItem item){
+    	String menuID = item.getmenuID();
+    	if (ticket.containsKey(menuID)){
+    		ticket.get(menuID).rem();
+    	}
+    }
+    public String showTicket(){
+//      String ss = "";	
+	  String ss = "\nID" + String.format("%18s", "Description") + String.format("%12s", "Count");
+	  Set<Entry<String, TicketItem>> ents = ticket.entrySet();
+      for (Entry<String, TicketItem> tk : ents) {
+    	  String id = tk.getKey();
+    	  TicketItem item = tk.getValue();
+         ss += "\n" + id + ", " + String.format("%15s", item.getDescription()) + ", " +  String.format("%10s", item.getCount());
+      }
+      return ss;
+    	 //    ss += id + " " + item.getDescription() + " " +  item.getCount();
+  }
+    /*public int contains(String menuID){
+    	if (ticket.containsKey(menuID)){
+    		return 1;
+    	}
+    	else return 0;
+    }
+  */ 
     /**
      * Format ticket as list of strings, with, per ticket item, 3 strings for 
      * respectively:
