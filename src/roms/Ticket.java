@@ -19,7 +19,7 @@ public class Ticket {
  
     private String tableID;
     private Money total;
-    public TreeMap<String, TicketItem> ticketmap;
+    private TreeMap<String, TicketItem> ticketmap;
     public String getTableID() { 
         return tableID; 
     }

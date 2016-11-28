@@ -15,7 +15,7 @@ import java.util.TreeMap;
  */
 public class Menu {
 	
-	public OfficeKVM ofkvm;
+	private OfficeKVM ofkvm;
 	
     public TreeMap<String, MenuItem> menuitems;   //for natural/lexicographic ordering of menuIDs
     /**
