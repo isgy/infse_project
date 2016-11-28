@@ -14,8 +14,8 @@ import java.util.List;
  *
  */
 public class TableDisplay extends AbstractIODevice {
-	
-	public Table table;
+    private String tableID;
+	private Table table;
     public void setT(Table table){
     	this.table = table;
     }
@@ -140,9 +140,6 @@ public class TableDisplay extends AbstractIODevice {
     public void payBill() {
         logger.fine(getInstanceName());
         List<String> args = new ArrayList<String>();
-        sendMessage("approveBill", args);
-        
-        
         table.payBill();
     }
 

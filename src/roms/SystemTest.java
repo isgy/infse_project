@@ -33,8 +33,30 @@ public class SystemTest extends TestBasis {
      
     
     @Test
-    public void showMenu() {
-    	logger.info(makeBanner("showMenu"));
+    public void addshowTicket() {
+    	logger.info(makeBanner("addshowTicket"));
+        input("1 12:00, OfficeKVM, okvm, addToMenu, M1, Fish, 7.95");
+        input("1 12:00, OfficeKVM, okvm, addToMenu, M2, Veg Chili, 6.70");
+        input("1 12:00, OfficeKVM, okvm, addToMenu, D1, Soft Drink, 1.50");
+        input("1 12:00, OfficeKVM, okvm, addToMenu, D2, Wine, 3.25");
+        input("1 20:00, TableDisplay, td1, startOrder");
+    	input("1 20:01, TableDisplay, td1, addMenuItem, M1");
+        input("1 20:01, TableDisplay, td1, addMenuItem, M2");
+    	input("1 20:01, TableDisplay, td1, addMenuItem, M1");
+    	input("1 20:01, TableDisplay, td1, addMenuItem, D1");
+    	input("1 20:01, TableDisplay, td1, showTicket");
+   
+    	expect("1 20:01, TableDisplay, td1, viewTicket,"
+     	+ "ID, Description, Count" 
+		+ "D1,  Soft Drink,     1" 
+		+ "M1,        Fish,     2" 
+		+ "M2,   Veg Chili,     1");
+    	runAndCheck(); 
+ }
+ 
+    @Test
+    public void addshowMenu() {
+    	logger.info(makeBanner("addshowMenu"));
      	input("1 12:00, OfficeKVM, okvm, addToMenu, M1, Fish, 7.95");
      	input("1 12:00, OfficeKVM, okvm, addToMenu, d2, Juice, 3.55");
      	input("1 12:00, OfficeKVM, okvm, addToMenu, M2, Veg Chili, 6.70");
@@ -51,7 +73,9 @@ public class SystemTest extends TestBasis {
 		+ "\nd2 Juice 3.55");  
     	runAndCheck(); 
  }
- /*   	input("1 12:00, OfficeKVM, okvm, addToMenu, M2, Veg Chili, 6.70;");
+ 
+    
+    /*   	input("1 12:00, OfficeKVM, okvm, addToMenu, M2, Veg Chili, 6.70;");
     	input("1 12:00, OfficeKVM, okvm, addToMenu, D1, Soft Drink, 1.50;");
     	input("1 12:00, OfficeKVM, okvm, addToMenu, D2, Wine, 3.25;");
     	input("1 19:15, OfficeKVM, okvm, showMenu");
@@ -210,7 +234,8 @@ public class SystemTest extends TestBasis {
         menu.setO(officeKVM);
         officeKVM.setMenu(menu);
         
-        
+                
+        List<Table> tables = new ArrayList<Table>();
         // TABLE-RELATED
         for (int i = 1; i <= NUM_TABLES; i++) {
             
@@ -223,7 +248,17 @@ public class SystemTest extends TestBasis {
             // DO NOT CHANGE this scheme for naming table IDs.
             
             String tableID = "Tab-" + iString;
-
+            
+            Table table = new Table(tableID);
+            table.setCmp(officeKVM);
+            table.setCr(cardReaders.get(i - 1));
+            table.setM(menu);
+            table.setReceiptPrinter(receiptPrinters.get(i - 1));
+            table.setTableDisplay(tableDisplays.get(i - 1));
+            tableDisplays.get(i - 1).setT(table);
+            
+            tables.add(table);
+            
             // Create table-related core objects.
             // Connect these objects to table-related IO objects and to other system 
             // components.

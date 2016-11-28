@@ -18,29 +18,33 @@ import java.lang.Boolean;
 public class Ticket {
  
     private String tableID;
-    public TreeMap<String, TicketItem> ticket;
+    public TreeMap<String, TicketItem> ticketmap;
     public String getTableID() { 
         return tableID; 
     }
-    public Ticket(){ 
-    TreeMap<String, TicketItem> ticket = new TreeMap<>();
+    
+    public Ticket(String tableID){ 
+    ticketmap = new TreeMap<>();
+    this.tableID = tableID;
     }
+    
     public void addToTicket(MenuItem item){
     	String menuID = item.getmenuID();
-    	if (ticket.containsKey(menuID)){
-    		ticket.get(menuID).add();
+    	if (ticketmap.containsKey(menuID)){
+    		ticketmap.get(menuID).add();
     	} else {
-    	ticket.put(menuID, new TicketItem(item));
+    	ticketmap.put(menuID, new TicketItem(item));
+    	ticketmap.get(menuID).add();
     	}
     }
     public void removeFromTicket(MenuItem item){
     	String menuID = item.getmenuID();
-    	if (ticket.containsKey(menuID)){
-    		ticket.get(menuID).rem();
+    	if (ticketmap.containsKey(menuID)){
+    		ticketmap.get(menuID).rem();
     	}
     }
     public Money getTotal(){
-    	Set<Entry<String, TicketItem>> ents = ticket.entrySet();
+    	Set<Entry<String, TicketItem>> ents = ticketmap.entrySet();
     	Money total = new Money();
         for (Entry<String, TicketItem> tk : ents) {
       	  Money price = tk.getValue().getPrice();            //price per item
@@ -53,7 +57,7 @@ public class Ticket {
     public String showTicket(){
 //      String ss = "";	
 	  String ss = "\nID" + String.format("%18s", "Description") + String.format("%12s", "Count");
-	  Set<Entry<String, TicketItem>> ents = ticket.entrySet();
+	  Set<Entry<String, TicketItem>> ents = ticketmap.entrySet();
       for (Entry<String, TicketItem> tk : ents) {
     	  String id = tk.getKey();
     	  TicketItem item = tk.getValue();

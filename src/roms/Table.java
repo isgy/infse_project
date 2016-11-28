@@ -6,7 +6,8 @@ import java.util.Set;
 import java.util.Map.Entry;
 
 public class Table {
-
+    
+	private String tableID;
     private Menu menu;
     private CardReader cr;
     private TableDisplay dsp;
@@ -14,7 +15,10 @@ public class Table {
     private ReceiptPrinter rprint;
     private Rack rack;
     private OfficeKVM cmp;
-    
+   
+    public Table(String tableID) { 
+    	this.tableID = tableID;
+    }
     public void setM(Menu menu) {
     this.menu = menu;
     }
@@ -23,9 +27,6 @@ public class Table {
     }
     public void setTableDisplay(TableDisplay dsp) {
     this.dsp = dsp;
-    }
-    public void setTicket(Ticket ticket) {
-    this.ticket = ticket;
     }
     public void setReceiptPrinter(ReceiptPrinter rprint) {
     	this.rprint = rprint;
@@ -43,7 +44,7 @@ public class Table {
 	
 
 	public void newTicket(){
-	 ticket = new Ticket();	
+	 ticket = new Ticket(tableID);	
 	}
     /**
      * 
