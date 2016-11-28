@@ -48,7 +48,11 @@ public class Ticket {
     	}
     }
     public Money getTotal(){
-        return ticketmap.firstEntry().getValue().getPrice().add(ticketmap.lastEntry().getValue().getPrice());
+    	Money total = new Money();
+        for (TicketItem t : ticketmap.values()) {
+             total = total.add(t.getPrice().multiply(t.getCount())); 	
+        }
+        return total;
     }
     public String showTicket(){
 //      String ss = "";	
