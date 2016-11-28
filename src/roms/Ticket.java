@@ -18,6 +18,7 @@ import java.lang.Boolean;
 public class Ticket {
  
     private String tableID;
+    private Money total;
     public TreeMap<String, TicketItem> ticketmap;
     public String getTableID() { 
         return tableID; 
@@ -26,15 +27,18 @@ public class Ticket {
     public Ticket(String tableID){ 
     ticketmap = new TreeMap<>();
     this.tableID = tableID;
+    total = new Money();
     }
     
     public void addToTicket(MenuItem item){
     	String menuID = item.getmenuID();
     	if (ticketmap.containsKey(menuID)){
     		ticketmap.get(menuID).add();
+    		total.add(item.getPrice());
     	} else {
     	ticketmap.put(menuID, new TicketItem(item));
     	ticketmap.get(menuID).add();
+        total.add(item.getPrice());
     	}
     }
     public void removeFromTicket(MenuItem item){
@@ -44,15 +48,7 @@ public class Ticket {
     	}
     }
     public Money getTotal(){
-    	Set<Entry<String, TicketItem>> ents = ticketmap.entrySet();
-    	Money total = new Money();
-        for (Entry<String, TicketItem> tk : ents) {
-      	  Money price = tk.getValue().getPrice();            //price per item
-      	  int countnum = tk.getValue().getCount();           //quantity of the item in ticket
-      	  Money itemtotal = price.multiply(countnum);        //total for the item
-          total.add(itemtotal);                              //added to ticket total
-        }
-        return total;
+        return ticketmap.firstEntry().getValue().getPrice().add(ticketmap.lastEntry().getValue().getPrice());
     }
     public String showTicket(){
 //      String ss = "";	

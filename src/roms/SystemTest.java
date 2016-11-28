@@ -31,30 +31,7 @@ public class SystemTest extends TestBasis {
         runAndCheck();
     } 
      
-    
-    @Test
-    public void addshowTicket() {
-    	logger.info(makeBanner("addshowTicket"));
-        input("1 12:00, OfficeKVM, okvm, addToMenu, M1, Fish, 7.95");
-        input("1 12:00, OfficeKVM, okvm, addToMenu, M2, Veg Chili, 6.70");
-        input("1 12:00, OfficeKVM, okvm, addToMenu, D1, Soft Drink, 1.50");
-        input("1 12:00, OfficeKVM, okvm, addToMenu, D2, Wine, 3.25");
-        input("1 20:00, TableDisplay, td1, startOrder");
-    	input("1 20:01, TableDisplay, td1, addMenuItem, M1");
-        input("1 20:01, TableDisplay, td1, addMenuItem, M2");
-    	input("1 20:01, TableDisplay, td1, addMenuItem, M1");
-    	input("1 20:01, TableDisplay, td1, addMenuItem, D1");
-    	input("1 20:01, TableDisplay, td1, showTicket");
-   
-    	expect("1 20:01, TableDisplay, td1, viewTicket,"
-     	+ "ID, Description, Count" 
-		+ "D1,  Soft Drink,     1" 
-		+ "M1,        Fish,     2" 
-		+ "M2,   Veg Chili,     1");
-    	runAndCheck(); 
- }
- 
-    @Test
+     @Test
     public void addshowMenu() {
     	logger.info(makeBanner("addshowMenu"));
      	input("1 12:00, OfficeKVM, okvm, addToMenu, M1, Fish, 7.95");
@@ -75,6 +52,51 @@ public class SystemTest extends TestBasis {
  }
  
     
+    @Test
+    public void addshowTicket() {
+    	logger.info(makeBanner("addshowTicket"));
+        input("1 12:00, OfficeKVM, okvm, addToMenu, M1, Fish, 7.95");
+        input("1 12:00, OfficeKVM, okvm, addToMenu, M2, Veg Chili, 6.70");
+        input("1 12:00, OfficeKVM, okvm, addToMenu, D1, Soft Drink, 1.50");
+        input("1 12:00, OfficeKVM, okvm, addToMenu, D2, Wine, 3.25");
+        input("1 20:00, TableDisplay, td1, startOrder");
+    	input("1 20:01, TableDisplay, td1, addMenuItem, M1");
+        input("1 20:01, TableDisplay, td1, addMenuItem, M2");
+    	input("1 20:01, TableDisplay, td1, addMenuItem, M1");
+    	input("1 20:01, TableDisplay, td1, addMenuItem, D1");
+    	input("1 20:01, TableDisplay, td1, showTicket");
+   
+    	expect("1 20:01, TableDisplay, td1, viewTicket,"
+     	+ "ID, Description, Count" 
+		+ "D1,  Soft Drink,     1" 
+		+ "M1,        Fish,     2" 
+		+ "M2,   Veg Chili,     1");
+    	runAndCheck();
+ }
+ 
+     @Test
+    public void addTicketPayBill() {
+    	logger.info(makeBanner("addTicketPayBill"));
+    	input("1 12:00, OfficeKVM, okvm, addToMenu, M1, Fish, 7.95");
+        input("1 12:00, OfficeKVM, okvm, addToMenu, M2, Veg Chili, 6.70");
+        input("1 12:00, OfficeKVM, okvm, addToMenu, D1, Soft Drink, 1.50");
+        input("1 12:00, OfficeKVM, okvm, addToMenu, D2, Wine, 3.25");
+        input("1 20:00, TableDisplay, td1, startOrder");
+        input("1 20:01, TableDisplay, td1, addMenuItem, M1");
+        input("1 20:01, TableDisplay, td1, addMenuItem, M2");
+        input("1 20:01, TableDisplay, td1, addMenuItem, M1");
+        input("1 20:01, TableDisplay, td1, addMenuItem, D1");
+        input("1 20:02, TableDisplay, td1, submitOrder");
+        input("1 21:30, TableDisplay, td1, payBill");
+        input("1 21:32, CardReader, cr1, acceptCardDetails, XYZ1234");
+        input("1 21:33, BankClient, bc, acceptAuthorisationCode, ABCD;");
+   
+    	expect("1 21:30, TableDisplay, td1, approveBill, Total:, 24.10"
+        + "1 21:32, BankClient, bc, makePayment, XYZ1234, 24.10"
+        + "1 21:33, ReceiptPrinter, rp1, takeReceipt, Total:, 24.10, AuthCode:, ABCD");
+    	runAndCheck();
+ }
+   
     /*   	input("1 12:00, OfficeKVM, okvm, addToMenu, M2, Veg Chili, 6.70;");
     	input("1 12:00, OfficeKVM, okvm, addToMenu, D1, Soft Drink, 1.50;");
     	input("1 12:00, OfficeKVM, okvm, addToMenu, D2, Wine, 3.25;");
@@ -233,7 +255,7 @@ public class SystemTest extends TestBasis {
         Menu menu = new Menu();
         menu.setO(officeKVM);
         officeKVM.setMenu(menu);
-        
+        officeKVM.setBank(bankClient);
                 
         List<Table> tables = new ArrayList<Table>();
         // TABLE-RELATED
