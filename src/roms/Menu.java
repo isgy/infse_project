@@ -18,20 +18,17 @@ public class Menu {
 	public OfficeKVM ofkvm;
 	
     public TreeMap<String, MenuItem> menuitems;   //for natural/lexicographic ordering of menuIDs
-    
     /**
      * @param o
      */
     public void setO(OfficeKVM o){
-    	ofkvm = o;
+    	ofkvm = o;                          
     }
     
     public void showm() {
     	String m = showMenu();
     	ofkvm.dmenu(m);
     }
-    
-    
     /**
      * Format menu as list of strings, 3 strings per item for 
      * respectively:
@@ -69,7 +66,6 @@ public class Menu {
     public Menu(){ 
      menuitems = new TreeMap<String, MenuItem>(); 
     }
-    
     /**
      * @param menuID
      * @return
@@ -81,7 +77,7 @@ public class Menu {
      * @param item
      */
     public void addToMenu(MenuItem item) {
-        menuitems.put(item.getmenuID(), item);   
+        menuitems.put(item.getmenuID(), item);      
     }
 
     /**
