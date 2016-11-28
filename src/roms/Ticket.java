@@ -39,6 +39,17 @@ public class Ticket {
     		ticket.get(menuID).rem();
     	}
     }
+    public Money getTotal(){
+    	Set<Entry<String, TicketItem>> ents = ticket.entrySet();
+    	Money total = new Money();
+        for (Entry<String, TicketItem> tk : ents) {
+      	  Money price = tk.getValue().getPrice();            //price per item
+      	  int countnum = tk.getValue().getCount();           //quantity of the item in ticket
+      	  Money itemtotal = price.multiply(countnum);        //total for the item
+          total.add(itemtotal);                              //added to ticket total
+        }
+        return total;
+    }
     public String showTicket(){
 //      String ss = "";	
 	  String ss = "\nID" + String.format("%18s", "Description") + String.format("%12s", "Count");

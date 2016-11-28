@@ -43,12 +43,12 @@ public class SystemTest extends TestBasis {
         input("1 12:00, OfficeKVM, okvm, removeFromMenu, M2");	
      	input("1 12:00, OfficeKVM, okvm, showMenu");
    
-    	expect("1 12:00, OfficeKVM, okvm, viewMenu," 
-     	+ "D1 Soft Drink 1.50"
-		+ "D2 Wine 3.25"
-		+ "M1 Fish 7.95"
+    	expect("\n1 12:00, OfficeKVM, okvm, viewMenu," 
+     	+ "\nD1 Soft Drink 1.50"
+		+ "\nD2 Wine 3.25"
+		+ "\nM1 Fish 7.95"
 	//	+ "M2 Veg Chili 6.70"
-		+ "d2 Juice 3.55");  
+		+ "\nd2 Juice 3.55");  
     	runAndCheck(); 
  }
  /*   	input("1 12:00, OfficeKVM, okvm, addToMenu, M2, Veg Chili, 6.70;");

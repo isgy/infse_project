@@ -2,6 +2,8 @@ package roms;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.Map.Entry;
 
 public class Table {
 
@@ -11,7 +13,7 @@ public class Table {
     private Ticket ticket;
     private ReceiptPrinter rprint;
     private Rack rack;
-    private int submitcount = 0;
+    private OfficeKVM cmp;
     
     public void setM(Menu menu) {
     this.menu = menu;
@@ -31,22 +33,35 @@ public class Table {
     public void setRack(Rack rack) {
     	this.rack = rack;
     }
+    public void setCmp(OfficeKVM cmp) {
+    	this.cmp = cmp;
+    }
 	public void showMenu(){
         String m = menu.showMenu();
         dsp.dTableMenu(m);
 	}
+	
 
 	public void newTicket(){
 	 ticket = new Ticket();	
 	}
+    /**
+     * 
+     */
     public void showTicket() {
         String t = ticket.showTicket();
         dsp.dTicket(t);
     }
+    /**
+     * @param menuID
+     */
     public void addMenuItem(String menuID) {
     	MenuItem item = menu.getMenuItem(menuID);
         ticket.addToTicket(item);
     }
+    /**
+     * @param menuID
+     */
     public void removeMenuItem(String menuID) {
     	MenuItem item = menu.getMenuItem(menuID);
         ticket.removeFromTicket(item);
@@ -55,6 +70,11 @@ public class Table {
         
     }
     public void payBill() {
-        // TO BE COMPLETED
+       Money total = ticket.getTotal();
+       dsp.displayBill(total);
+       String cdetails = cr.waitForCardDetails();
+       cmp.getBank().makePayment(cdetails, total);
+       String auth = cmp.getBank().waitForAuthorisation();
+       rprint.printReceipt(total, auth);     
     }
 }
