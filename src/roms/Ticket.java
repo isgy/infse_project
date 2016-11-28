@@ -99,11 +99,11 @@ public class Ticket {
       List<String> ss = new ArrayList<String>();
 	   //creates menu list from the treemap
 	  Set<Entry<String, TicketItem>> ents = ticketmap.entrySet();
-      for (Entry<String, TicketItem> tk : ents) {
-    	  String id = tk.getKey();
-    	  TicketItem item = tk.getValue();
-          String[] stringArray ={id, item.getDescription(), String.format("%10s", item.getCount())};
-          ss.addAll(Arrays.asList(stringArray));
+      for (Entry<String, TicketItem> tk : ents) {                            
+    	  String id = tk.getKey();                                        //for each ticketitem in ticketmap, get the ID
+    	  TicketItem item = tk.getValue();                                //now get the ticketitem
+          String[] stringArray ={id, item.getDescription(), String.format("%10s", item.getCount())};   //add description and right-align count
+          ss.addAll(Arrays.asList(stringArray));                             //array of strings -> list -> arraylist
           }
           return ss;
     	 //    ss += id + " " + item.getDescription() + " " +  item.getPrice();

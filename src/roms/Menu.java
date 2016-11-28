@@ -112,11 +112,11 @@ public class Menu {
       List<String> ss = new ArrayList<String>();
 	   //creates menu list from the treemap
 	  Set<Entry<String, MenuItem>> ents = menuitems.entrySet();
-      for (Entry<String, MenuItem> menuitems : ents) {
-    	  String id = menuitems.getKey();
-    	  MenuItem item = menuitems.getValue();
-          String[] stringArray ={id, item.getDescription(), String.format("%10s", item.getPrice())};
-          ss.addAll(Arrays.asList(stringArray));
+      for (Entry<String, MenuItem> menuitems : ents) {                          
+    	  String id = menuitems.getKey();                                   //for each menuitem in menuitems, get the ID
+    	  MenuItem item = menuitems.getValue();                             //now get the menuitem
+          String[] stringArray ={id, item.getDescription(), String.format("%10s", item.getPrice())};  //add description and right-align price
+          ss.addAll(Arrays.asList(stringArray));                         //all this is modified for toStrings in TicketItem.
           }
           return ss;
     	 //    ss += id + " " + item.getDescription() + " " +  item.getPrice();
