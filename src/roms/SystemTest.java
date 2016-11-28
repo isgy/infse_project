@@ -5,7 +5,7 @@ package roms;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.lang.String;
 import org.junit.Test;
 
 /**
@@ -35,19 +35,21 @@ public class SystemTest extends TestBasis {
     public void addshowMenu() {
     	logger.info(makeBanner("addshowMenu"));
      	input("1 12:00, OfficeKVM, okvm, addToMenu, M1, Fish, 7.95");
-     	input("1 12:00, OfficeKVM, okvm, addToMenu, d2, Juice, 3.55");
      	input("1 12:00, OfficeKVM, okvm, addToMenu, M2, Veg Chili, 6.70");
      	input("1 12:00, OfficeKVM, okvm, addToMenu, D1, Soft Drink, 1.50");
      	input("1 12:00, OfficeKVM, okvm, addToMenu, D2, Wine, 3.25");  	
         input("1 12:00, OfficeKVM, okvm, removeFromMenu, M2");	
      	input("1 12:00, OfficeKVM, okvm, showMenu");
-   
-    	expect("\n1 12:00, OfficeKVM, okvm, viewMenu," 
-     	+ "\nD1 Soft Drink 1.50"
-		+ "\nD2 Wine 3.25"
-		+ "\nM1 Fish 7.95"
-	//	+ "M2 Veg Chili 6.70"
-		+ "\nd2 Juice 3.55");  
+  
+     	
+     	String expected = "1 12:00, OfficeKVM, okvm, viewMenu, tuples, 3"
+                        + '\n' + 
+     			        "ID" + String.format("%18s", "Description") + String.format("%12s", "Price")
+                        + "\nD1" + String.format("%18s", "Soft Drink,") + String.format("%12s", "1.50")
+                        + "\nD2" + String.format("%18s", "Wine,") + String.format("%12s", "3.25")
+                        + "\nM1" + String.format("%18s", "Fish,") + String.format("%12s", "7.95");
+                          
+    	expect(expected);
     	runAndCheck(); 
  }
  
@@ -67,10 +69,10 @@ public class SystemTest extends TestBasis {
     	input("1 20:01, TableDisplay, td1, showTicket");
    
     	expect("1 20:01, TableDisplay, td1, viewTicket,"
-     	+ "ID, Description, Count" 
-		+ "D1,  Soft Drink,     1" 
-		+ "M1,        Fish,     2" 
-		+ "M2,   Veg Chili,     1");
+     	+ "\nID, Description, Count" 
+		+ "\nD1,  Soft Drink,     1" 
+		+ "\nM1,        Fish,     2" 
+		+ "\nM2,   Veg Chili,     1");
     	runAndCheck();
  }
  
@@ -89,11 +91,11 @@ public class SystemTest extends TestBasis {
         input("1 20:02, TableDisplay, td1, submitOrder");
         input("1 21:30, TableDisplay, td1, payBill");
         input("1 21:32, CardReader, cr1, acceptCardDetails, XYZ1234");
-        input("1 21:33, BankClient, bc, acceptAuthorisationCode, ABCD;");
+        input("1 21:33, BankClient, bc, acceptAuthorisationCode, ABCD");
    
-    	expect("1 21:30, TableDisplay, td1, approveBill, Total:, 24.10"
-        + "1 21:32, BankClient, bc, makePayment, XYZ1234, 24.10"
-        + "1 21:33, ReceiptPrinter, rp1, takeReceipt, Total:, 24.10, AuthCode:, ABCD");
+    	expect("1 21:30, TableDisplay, td1, approveBill, Total:, 24.10;"
+        + "\n1 21:32, BankClient, bc, makePayment, XYZ1234, 24.10;"
+        + "\n1 21:33, ReceiptPrinter, rp1, takeReceipt, Total:, 24.10, AuthCode:, ABCD");
     	runAndCheck();
  }
    

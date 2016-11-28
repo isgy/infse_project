@@ -38,8 +38,8 @@ public class Table {
     	this.cmp = cmp;
     }
 	public void showMenu(){
-        String m = menu.showMenu();
-        dsp.dTableMenu(m);
+        dsp.displayMenu(menu);
+        //dsp.dTableMenu(m);
 	}
 	
 
@@ -50,8 +50,8 @@ public class Table {
      * 
      */
     public void showTicket() {
-        String t = ticket.showTicket();
-        dsp.dTicket(t);
+    //   String t = ticket.showTicket();
+        dsp.displayTicket(ticket);
     }
     /**
      * @param menuID

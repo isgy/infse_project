@@ -109,7 +109,7 @@ public class TableDisplay extends AbstractIODevice {
         logger.fine(getInstanceName());
         table.showMenu();
     }
-    public void dTableMenu(String m) {
+/*    public void dTableMenu(String m) {
         List<String> args = new ArrayList<String>();
 	      //  String s = mm.toString(); 
 	    args.add(m); 
@@ -120,7 +120,7 @@ public class TableDisplay extends AbstractIODevice {
 	      //  String s = mm.toString(); 
 	    args.add(t); 
 	    sendMessage("viewTicket", args);
-    }
+    } */
     public void showTicket() {
         logger.fine(getInstanceName());
         table.showTicket();

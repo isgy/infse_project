@@ -54,7 +54,7 @@ public class Ticket {
         }
         return total;
     }
-    public String showTicket(){
+ /*   public String showTicket(){
 //      String ss = "";	
 	  String ss = "\nID" + String.format("%18s", "Description") + String.format("%12s", "Count");
 	  Set<Entry<String, TicketItem>> ents = ticketmap.entrySet();
@@ -65,7 +65,7 @@ public class Ticket {
       }
       return ss;
     	 //    ss += id + " " + item.getDescription() + " " +  item.getCount();
-  }
+  
     /*public int contains(String menuID){
     	if (ticket.containsKey(menuID)){
     		return 1;
@@ -96,17 +96,18 @@ public class Ticket {
      */
     public List<String> toStrings() {
  
-        // Dummy implementation. 
-        String[] stringArray = 
-            {"D1", "Wine",        "1",
-             "D2", "Soft drink",  "3",
-             "M1", "Fish",        "2",
-             "M2", "Veg chili",   "2"
-            };
-        List<String> ss = new ArrayList<String>();
-        ss.addAll(Arrays.asList(stringArray));
-        return ss;
-    }
+      List<String> ss = new ArrayList<String>();
+	   //creates menu list from the treemap
+	  Set<Entry<String, TicketItem>> ents = ticketmap.entrySet();
+      for (Entry<String, TicketItem> tk : ents) {
+    	  String id = tk.getKey();
+    	  TicketItem item = tk.getValue();
+          String[] stringArray ={id, item.getDescription(), String.format("%10s", item.getCount())};
+          ss.addAll(Arrays.asList(stringArray));
+          }
+          return ss;
+    	 //    ss += id + " " + item.getDescription() + " " +  item.getPrice();
+        }
     
     
 }

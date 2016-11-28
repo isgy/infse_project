@@ -25,10 +25,11 @@ public class Menu {
     	ofkvm = o;                          
     }
     
-    public void showm() {
-    	String m = showMenu();
-    	ofkvm.dmenu(m);
+    public void showMenu() {
+   // 	String m = showMenu();
+    	ofkvm.displayMenu(this);
     }
+    
     /**
      * Format menu as list of strings, 3 strings per item for 
      * respectively:
@@ -51,7 +52,7 @@ public class Menu {
      * @return
      */  
     
-    public String showMenu(){
+  /*  public String showMenu(){
 //      String ss = "";	
 	  String ss = "\nID" + String.format("%18s", "Description") + String.format("%12s", "Price");         //creates menu list from the treemap
 	  Set<Entry<String, MenuItem>> ents = menuitems.entrySet();
@@ -62,7 +63,7 @@ public class Menu {
     	 //    ss += id + " " + item.getDescription() + " " +  item.getPrice();
         }
       return ss;
-    }
+    } */
     public Menu(){ 
      menuitems = new TreeMap<String, MenuItem>(); 
     }
@@ -108,17 +109,17 @@ public class Menu {
      * @return
      */
     public List<String> toStrings() {
- 
-        // Dummy implementation. 
-        String[] stringArray = 
-            {"D1", "Wine",        "2.50",
-             "D2", "Soft drink",  "1.50",
-             "M1", "Fish",        "7.95",
-             "M2", "Veg chili",   "6.70"
-            };
-        List<String> ss = new ArrayList<String>();
-        ss.addAll(Arrays.asList(stringArray));
-        return ss;
-    }
+      List<String> ss = new ArrayList<String>();
+	   //creates menu list from the treemap
+	  Set<Entry<String, MenuItem>> ents = menuitems.entrySet();
+      for (Entry<String, MenuItem> menuitems : ents) {
+    	  String id = menuitems.getKey();
+    	  MenuItem item = menuitems.getValue();
+          String[] stringArray ={id, item.getDescription(), String.format("%10s", item.getPrice())};
+          ss.addAll(Arrays.asList(stringArray));
+          }
+          return ss;
+    	 //    ss += id + " " + item.getDescription() + " " +  item.getPrice();
+        }
     
 }
