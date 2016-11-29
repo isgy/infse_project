@@ -129,16 +129,16 @@ public class SystemTest extends TestBasis {
 
       //  input("1 20:02, TableDisplay, td1, submitOrder");
         expect("1 19:30, TableDisplay, td1, viewMenu, tuples, 3,"
-                  + "\n    ID, Description,      Price,"
+               + "\n    ID, Description,      Price,\n"
                + "\n    B3,     Chicken,       5.05,"
                + "\n    D1,  Soft Drink,       1.50,"
                + "\n    D2,        Wine,       3.25,"
                + "\n    D4,       Salad,       2.65,"
                + "\n    M1,        Fish,       7.95,"
                + "\n    M2,   Veg Chili,       6.70,"
-               + "    a3,      Cheese,       4.25;");
+               + "a3,      Cheese,       4.25");
         expect("1 20:00, TableDisplay, td1, viewTicket, tuples, 3,"
-               + "\n    ID, Description,        Count;");
+               + "\n    ID, Description,        Count");
         expect("1 23:00, TableDisplay, td1, viewTicket, tuples, 3,"
                + "\n    ID, Description,       Count,"
                + "\n    B3,     Chicken,          1, "

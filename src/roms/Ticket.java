@@ -108,7 +108,7 @@ public class Ticket {
       for (Entry<String, TicketItem> tk : ents) {                            
     	  String id = tk.getKey();                                        //for each ticketitem in ticketmap, get the ID
     	  TicketItem item = tk.getValue();                                //now get the ticketitem
-          String[] stringArray ={id, item.getDescription(), String.format("%10s", item.getCount())};   //add description and right-align count
+          String[] stringArray ={id, item.getDescription(), String.format("%5s", item.getCount())};   //add description and right-align count
           ss.addAll(Arrays.asList(stringArray));                             //array of strings -> list -> arraylist
           }
           return ss;
