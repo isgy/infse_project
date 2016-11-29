@@ -1,11 +1,34 @@
-Nov 29, 2016 7:38:36 AM roms.OfficeKVM setMenu
+Nov 29, 2016 8:33:20 AM roms.OfficeKVM setMenu
 FINE: okvm
-Nov 29, 2016 7:38:36 AM roms.SystemTest addTicketPayBill
+Nov 29, 2016 8:33:20 AM roms.SystemTest removeAssertCheck
+INFO: 
+#############################################################
+TESTCASE: removeAssertCheck
+#############################################################
+Nov 29, 2016 8:33:20 AM roms.TestBasis run
+INFO: 
+Input events:
+1 12:00, OfficeKVM, okvm, removeFromMenu, M2;
+
+Expected output events:
+
+Nov 29, 2016 8:33:20 AM roms.OfficeKVM removeFromMenu
+FINE: okvm
+Nov 29, 2016 8:33:20 AM roms.TestBasis checkTestResults
+INFO: EVENT LISTS EQUAL
+
+Expected output events:
+
+Actual output events:
+
+Nov 29, 2016 8:33:20 AM roms.OfficeKVM setMenu
+FINE: okvm
+Nov 29, 2016 8:33:20 AM roms.SystemTest addTicketPayBill
 INFO: 
 #############################################################
 TESTCASE: addTicketPayBill
 #############################################################
-Nov 29, 2016 7:38:36 AM roms.TestBasis run
+Nov 29, 2016 8:33:20 AM roms.TestBasis run
 INFO: 
 Input events:
 1 12:00, OfficeKVM, okvm, addToMenu, M1, Fish, 7.95;
@@ -27,37 +50,37 @@ Expected output events:
 1 21:32, BankClient, bc, makePayment, XYZ1234, 24.10;
 1 21:33, ReceiptPrinter, rp1, takeReceipt, Total:, 24.10, AuthCode:, ABCD;
 
-Nov 29, 2016 7:38:36 AM roms.OfficeKVM addToMenu
+Nov 29, 2016 8:33:20 AM roms.OfficeKVM addToMenu
 FINE: okvm
-Nov 29, 2016 7:38:36 AM roms.OfficeKVM addToMenu
+Nov 29, 2016 8:33:20 AM roms.OfficeKVM addToMenu
 FINE: okvm
-Nov 29, 2016 7:38:36 AM roms.OfficeKVM addToMenu
+Nov 29, 2016 8:33:20 AM roms.OfficeKVM addToMenu
 FINE: okvm
-Nov 29, 2016 7:38:36 AM roms.OfficeKVM addToMenu
+Nov 29, 2016 8:33:20 AM roms.OfficeKVM addToMenu
 FINE: okvm
-Nov 29, 2016 7:38:36 AM roms.TableDisplay startOrder
+Nov 29, 2016 8:33:20 AM roms.TableDisplay startOrder
 FINE: td1
-Nov 29, 2016 7:38:36 AM roms.TableDisplay addMenuItem
+Nov 29, 2016 8:33:20 AM roms.TableDisplay addMenuItem
 FINE: td1
-Nov 29, 2016 7:38:36 AM roms.TableDisplay addMenuItem
+Nov 29, 2016 8:33:20 AM roms.TableDisplay addMenuItem
 FINE: td1
-Nov 29, 2016 7:38:36 AM roms.TableDisplay addMenuItem
+Nov 29, 2016 8:33:20 AM roms.TableDisplay addMenuItem
 FINE: td1
-Nov 29, 2016 7:38:36 AM roms.TableDisplay addMenuItem
+Nov 29, 2016 8:33:20 AM roms.TableDisplay addMenuItem
 FINE: td1
-Nov 29, 2016 7:38:36 AM roms.TableDisplay submitOrder
+Nov 29, 2016 8:33:20 AM roms.TableDisplay submitOrder
 FINE: td1
-Nov 29, 2016 7:38:36 AM roms.TableDisplay payBill
+Nov 29, 2016 8:33:20 AM roms.TableDisplay payBill
 FINE: td1
-Nov 29, 2016 7:38:36 AM roms.CardReader waitForCardDetails
+Nov 29, 2016 8:33:20 AM roms.CardReader waitForCardDetails
 FINE: cr1
-Nov 29, 2016 7:38:36 AM roms.BankClient makePayment
+Nov 29, 2016 8:33:20 AM roms.BankClient makePayment
 FINE: bc
-Nov 29, 2016 7:38:36 AM roms.BankClient waitForAuthorisation
+Nov 29, 2016 8:33:20 AM roms.BankClient waitForAuthorisation
 FINE: bc
-Nov 29, 2016 7:38:36 AM roms.ReceiptPrinter printReceipt
+Nov 29, 2016 8:33:20 AM roms.ReceiptPrinter printReceipt
 FINE: rp1
-Nov 29, 2016 7:38:36 AM roms.TestBasis checkTestResults
+Nov 29, 2016 8:33:20 AM roms.TestBasis checkTestResults
 INFO: EVENT LISTS EQUAL
 
 Expected output events:
@@ -70,14 +93,14 @@ Actual output events:
 1 21:32, BankClient, bc, makePayment, XYZ1234, 24.10;
 1 21:33, ReceiptPrinter, rp1, takeReceipt, Total:, 24.10, AuthCode:, ABCD;
 
-Nov 29, 2016 7:38:36 AM roms.OfficeKVM setMenu
+Nov 29, 2016 8:33:20 AM roms.OfficeKVM setMenu
 FINE: okvm
-Nov 29, 2016 7:38:36 AM roms.SystemTest addshowMenu
+Nov 29, 2016 8:33:20 AM roms.SystemTest addshowMenu
 INFO: 
 #############################################################
 TESTCASE: addshowMenu
 #############################################################
-Nov 29, 2016 7:38:36 AM roms.TestBasis run
+Nov 29, 2016 8:33:20 AM roms.TestBasis run
 INFO: 
 Input events:
 1 12:00, OfficeKVM, okvm, addToMenu, M1, Fish, 7.95;
@@ -94,21 +117,21 @@ Expected output events:
     D2,        Wine,  3.25, 
     M1,        Fish,  7.95;
 
-Nov 29, 2016 7:38:36 AM roms.OfficeKVM addToMenu
+Nov 29, 2016 8:33:20 AM roms.OfficeKVM addToMenu
 FINE: okvm
-Nov 29, 2016 7:38:36 AM roms.OfficeKVM addToMenu
+Nov 29, 2016 8:33:20 AM roms.OfficeKVM addToMenu
 FINE: okvm
-Nov 29, 2016 7:38:36 AM roms.OfficeKVM addToMenu
+Nov 29, 2016 8:33:20 AM roms.OfficeKVM addToMenu
 FINE: okvm
-Nov 29, 2016 7:38:36 AM roms.OfficeKVM addToMenu
+Nov 29, 2016 8:33:20 AM roms.OfficeKVM addToMenu
 FINE: okvm
-Nov 29, 2016 7:38:36 AM roms.OfficeKVM removeFromMenu
+Nov 29, 2016 8:33:20 AM roms.OfficeKVM removeFromMenu
 FINE: okvm
-Nov 29, 2016 7:38:36 AM roms.OfficeKVM showMenu
+Nov 29, 2016 8:33:20 AM roms.OfficeKVM showMenu
 FINE: okvm
-Nov 29, 2016 7:38:36 AM roms.OfficeKVM displayMenu
+Nov 29, 2016 8:33:20 AM roms.OfficeKVM displayMenu
 FINE: okvm
-Nov 29, 2016 7:38:36 AM roms.TestBasis checkTestResults
+Nov 29, 2016 8:33:20 AM roms.TestBasis checkTestResults
 INFO: EVENT LISTS EQUAL
 
 Expected output events:
@@ -125,14 +148,14 @@ Actual output events:
     D2,        Wine,  3.25, 
     M1,        Fish,  7.95;
 
-Nov 29, 2016 7:38:36 AM roms.OfficeKVM setMenu
+Nov 29, 2016 8:33:20 AM roms.OfficeKVM setMenu
 FINE: okvm
-Nov 29, 2016 7:38:36 AM roms.SystemTest addshowTicket
+Nov 29, 2016 8:33:20 AM roms.SystemTest addshowTicket
 INFO: 
 #############################################################
 TESTCASE: addshowTicket
 #############################################################
-Nov 29, 2016 7:38:36 AM roms.TestBasis run
+Nov 29, 2016 8:33:20 AM roms.TestBasis run
 INFO: 
 Input events:
 1 12:00, OfficeKVM, okvm, addToMenu, M1, Fish, 7.95;
@@ -140,11 +163,18 @@ Input events:
 1 12:00, OfficeKVM, okvm, addToMenu, D1, Soft Drink, 1.50;
 1 12:00, OfficeKVM, okvm, addToMenu, D2, Wine, 3.25;
 1 20:00, TableDisplay, td1, startOrder;
+1 21:24, TableDisplay, td2, startOrder;
+1 21:40, TableDisplay, td2, addMenuItem, M2;
+1 21:40, TableDisplay, td2, addMenuItem, D2;
+1 23:00, OfficeKVM, okvm, addToMenu, d7, Cake, 1.05;
+1 23:30, TableDisplay, td2, addMenuItem, d7;
+1 23:31, TableDisplay, td2, addMenuItem, d7;
 1 20:01, TableDisplay, td1, addMenuItem, M1;
 1 20:01, TableDisplay, td1, addMenuItem, M2;
 1 20:01, TableDisplay, td1, addMenuItem, M1;
 1 20:01, TableDisplay, td1, addMenuItem, D1;
 1 20:01, TableDisplay, td1, showTicket;
+1 23:33, TableDisplay, td2, showTicket;
 
 Expected output events:
 1 20:01, TableDisplay, td1, viewTicket, tuples, 3, 
@@ -152,30 +182,51 @@ Expected output events:
     D1,  Soft Drink,     1, 
     M1,        Fish,     2, 
     M2,   Veg Chili,     1;
+1 23:33, TableDisplay, td2, viewTicket, tuples, 3, 
+    ID, Description, Count, 
+    D2,        Wine,     1, 
+    M2,   Veg Chili,     1, 
+    d7,        Cake,     2;
 
-Nov 29, 2016 7:38:36 AM roms.OfficeKVM addToMenu
+Nov 29, 2016 8:33:20 AM roms.OfficeKVM addToMenu
 FINE: okvm
-Nov 29, 2016 7:38:36 AM roms.OfficeKVM addToMenu
+Nov 29, 2016 8:33:20 AM roms.OfficeKVM addToMenu
 FINE: okvm
-Nov 29, 2016 7:38:36 AM roms.OfficeKVM addToMenu
+Nov 29, 2016 8:33:20 AM roms.OfficeKVM addToMenu
 FINE: okvm
-Nov 29, 2016 7:38:36 AM roms.OfficeKVM addToMenu
+Nov 29, 2016 8:33:20 AM roms.OfficeKVM addToMenu
 FINE: okvm
-Nov 29, 2016 7:38:36 AM roms.TableDisplay startOrder
+Nov 29, 2016 8:33:20 AM roms.TableDisplay startOrder
 FINE: td1
-Nov 29, 2016 7:38:36 AM roms.TableDisplay addMenuItem
+Nov 29, 2016 8:33:20 AM roms.TableDisplay startOrder
+FINE: td2
+Nov 29, 2016 8:33:20 AM roms.TableDisplay addMenuItem
+FINE: td2
+Nov 29, 2016 8:33:20 AM roms.TableDisplay addMenuItem
+FINE: td2
+Nov 29, 2016 8:33:20 AM roms.OfficeKVM addToMenu
+FINE: okvm
+Nov 29, 2016 8:33:20 AM roms.TableDisplay addMenuItem
+FINE: td2
+Nov 29, 2016 8:33:20 AM roms.TableDisplay addMenuItem
+FINE: td2
+Nov 29, 2016 8:33:20 AM roms.TableDisplay addMenuItem
 FINE: td1
-Nov 29, 2016 7:38:36 AM roms.TableDisplay addMenuItem
+Nov 29, 2016 8:33:20 AM roms.TableDisplay addMenuItem
 FINE: td1
-Nov 29, 2016 7:38:36 AM roms.TableDisplay addMenuItem
+Nov 29, 2016 8:33:20 AM roms.TableDisplay addMenuItem
 FINE: td1
-Nov 29, 2016 7:38:36 AM roms.TableDisplay addMenuItem
+Nov 29, 2016 8:33:20 AM roms.TableDisplay addMenuItem
 FINE: td1
-Nov 29, 2016 7:38:36 AM roms.TableDisplay showTicket
+Nov 29, 2016 8:33:20 AM roms.TableDisplay showTicket
 FINE: td1
-Nov 29, 2016 7:38:36 AM roms.TableDisplay displayTicket
+Nov 29, 2016 8:33:20 AM roms.TableDisplay displayTicket
 FINE: td1
-Nov 29, 2016 7:38:36 AM roms.TestBasis checkTestResults
+Nov 29, 2016 8:33:20 AM roms.TableDisplay showTicket
+FINE: td2
+Nov 29, 2016 8:33:20 AM roms.TableDisplay displayTicket
+FINE: td2
+Nov 29, 2016 8:33:20 AM roms.TestBasis checkTestResults
 INFO: EVENT LISTS EQUAL
 
 Expected output events:
@@ -184,6 +235,11 @@ Expected output events:
     D1,  Soft Drink,     1, 
     M1,        Fish,     2, 
     M2,   Veg Chili,     1;
+1 23:33, TableDisplay, td2, viewTicket, tuples, 3, 
+    ID, Description, Count, 
+    D2,        Wine,     1, 
+    M2,   Veg Chili,     1, 
+    d7,        Cake,     2;
 
 Actual output events:
 1 20:01, TableDisplay, td1, viewTicket, tuples, 3, 
@@ -191,15 +247,20 @@ Actual output events:
     D1,  Soft Drink,     1, 
     M1,        Fish,     2, 
     M2,   Veg Chili,     1;
+1 23:33, TableDisplay, td2, viewTicket, tuples, 3, 
+    ID, Description, Count, 
+    D2,        Wine,     1, 
+    M2,   Veg Chili,     1, 
+    d7,        Cake,     2;
 
-Nov 29, 2016 7:38:36 AM roms.OfficeKVM setMenu
+Nov 29, 2016 8:33:20 AM roms.OfficeKVM setMenu
 FINE: okvm
-Nov 29, 2016 7:38:36 AM roms.SystemTest cancelReadyUpLight
+Nov 29, 2016 8:33:20 AM roms.SystemTest cancelReadyUpLight
 INFO: 
 #############################################################
 TESTCASE: cancelReadyUpLight
 #############################################################
-Nov 29, 2016 7:38:36 AM roms.TestBasis run
+Nov 29, 2016 8:33:20 AM roms.TestBasis run
 INFO: 
 Input events:
 1 18:00, PassButton, pb, press;
@@ -207,11 +268,11 @@ Input events:
 Expected output events:
 1 18:00, PassLight, pl, viewSwitchedOff;
 
-Nov 29, 2016 7:38:36 AM roms.PassButton press
+Nov 29, 2016 8:33:20 AM roms.PassButton press
 FINE: pb
-Nov 29, 2016 7:38:36 AM roms.PassLight switchOff
+Nov 29, 2016 8:33:20 AM roms.PassLight switchOff
 FINE: pl
-Nov 29, 2016 7:38:36 AM roms.TestBasis checkTestResults
+Nov 29, 2016 8:33:20 AM roms.TestBasis checkTestResults
 INFO: EVENT LISTS EQUAL
 
 Expected output events:
@@ -220,14 +281,14 @@ Expected output events:
 Actual output events:
 1 18:00, PassLight, pl, viewSwitchedOff;
 
-Nov 29, 2016 7:38:36 AM roms.OfficeKVM setMenu
+Nov 29, 2016 8:33:20 AM roms.OfficeKVM setMenu
 FINE: okvm
-Nov 29, 2016 7:38:36 AM roms.SystemTest addRemoveTicketPayBill
+Nov 29, 2016 8:33:20 AM roms.SystemTest addRemoveTicketPayBill
 INFO: 
 #############################################################
 TESTCASE: addRemoveTicketPayBill
 #############################################################
-Nov 29, 2016 7:38:36 AM roms.TestBasis run
+Nov 29, 2016 8:33:20 AM roms.TestBasis run
 INFO: 
 Input events:
 1 09:00, OfficeKVM, okvm, addToMenu, D4, Salad, 2.65;
@@ -278,65 +339,65 @@ Expected output events:
 1 21:32, BankClient, bc, makePayment, ABC9876, 34.55;
 1 21:33, ReceiptPrinter, rp1, takeReceipt, Total:, 34.55, AuthCode:, FGHI;
 
-Nov 29, 2016 7:38:36 AM roms.OfficeKVM addToMenu
+Nov 29, 2016 8:33:20 AM roms.OfficeKVM addToMenu
 FINE: okvm
-Nov 29, 2016 7:38:36 AM roms.OfficeKVM addToMenu
+Nov 29, 2016 8:33:20 AM roms.OfficeKVM addToMenu
 FINE: okvm
-Nov 29, 2016 7:38:36 AM roms.OfficeKVM addToMenu
+Nov 29, 2016 8:33:20 AM roms.OfficeKVM addToMenu
 FINE: okvm
-Nov 29, 2016 7:38:36 AM roms.OfficeKVM addToMenu
+Nov 29, 2016 8:33:20 AM roms.OfficeKVM addToMenu
 FINE: okvm
-Nov 29, 2016 7:38:36 AM roms.OfficeKVM addToMenu
+Nov 29, 2016 8:33:20 AM roms.OfficeKVM addToMenu
 FINE: okvm
-Nov 29, 2016 7:38:36 AM roms.OfficeKVM addToMenu
+Nov 29, 2016 8:33:20 AM roms.OfficeKVM addToMenu
 FINE: okvm
-Nov 29, 2016 7:38:36 AM roms.OfficeKVM addToMenu
+Nov 29, 2016 8:33:20 AM roms.OfficeKVM addToMenu
 FINE: okvm
-Nov 29, 2016 7:38:36 AM roms.TableDisplay startOrder
+Nov 29, 2016 8:33:20 AM roms.TableDisplay startOrder
 FINE: td1
-Nov 29, 2016 7:38:36 AM roms.TableDisplay startOrder
+Nov 29, 2016 8:33:20 AM roms.TableDisplay startOrder
 FINE: td2
-Nov 29, 2016 7:38:36 AM roms.TableDisplay showMenu
+Nov 29, 2016 8:33:20 AM roms.TableDisplay showMenu
 FINE: td1
-Nov 29, 2016 7:38:36 AM roms.TableDisplay displayMenu
+Nov 29, 2016 8:33:20 AM roms.TableDisplay displayMenu
 FINE: td1
-Nov 29, 2016 7:38:36 AM roms.TableDisplay showTicket
+Nov 29, 2016 8:33:20 AM roms.TableDisplay showTicket
 FINE: td1
-Nov 29, 2016 7:38:36 AM roms.TableDisplay displayTicket
+Nov 29, 2016 8:33:20 AM roms.TableDisplay displayTicket
 FINE: td1
-Nov 29, 2016 7:38:36 AM roms.TableDisplay addMenuItem
+Nov 29, 2016 8:33:20 AM roms.TableDisplay addMenuItem
 FINE: td1
-Nov 29, 2016 7:38:36 AM roms.TableDisplay addMenuItem
+Nov 29, 2016 8:33:20 AM roms.TableDisplay addMenuItem
 FINE: td1
-Nov 29, 2016 7:38:36 AM roms.TableDisplay addMenuItem
+Nov 29, 2016 8:33:20 AM roms.TableDisplay addMenuItem
 FINE: td1
-Nov 29, 2016 7:38:36 AM roms.TableDisplay addMenuItem
+Nov 29, 2016 8:33:20 AM roms.TableDisplay addMenuItem
 FINE: td1
-Nov 29, 2016 7:38:36 AM roms.TableDisplay addMenuItem
+Nov 29, 2016 8:33:20 AM roms.TableDisplay addMenuItem
 FINE: td2
-Nov 29, 2016 7:38:36 AM roms.TableDisplay addMenuItem
+Nov 29, 2016 8:33:20 AM roms.TableDisplay addMenuItem
 FINE: td1
-Nov 29, 2016 7:38:36 AM roms.TableDisplay addMenuItem
+Nov 29, 2016 8:33:20 AM roms.TableDisplay addMenuItem
 FINE: td1
-Nov 29, 2016 7:38:36 AM roms.TableDisplay addMenuItem
+Nov 29, 2016 8:33:20 AM roms.TableDisplay addMenuItem
 FINE: td1
-Nov 29, 2016 7:38:36 AM roms.TableDisplay removeMenuItem
+Nov 29, 2016 8:33:20 AM roms.TableDisplay removeMenuItem
 FINE: td1
-Nov 29, 2016 7:38:36 AM roms.TableDisplay showTicket
+Nov 29, 2016 8:33:20 AM roms.TableDisplay showTicket
 FINE: td1
-Nov 29, 2016 7:38:36 AM roms.TableDisplay displayTicket
+Nov 29, 2016 8:33:20 AM roms.TableDisplay displayTicket
 FINE: td1
-Nov 29, 2016 7:38:36 AM roms.TableDisplay payBill
+Nov 29, 2016 8:33:20 AM roms.TableDisplay payBill
 FINE: td1
-Nov 29, 2016 7:38:36 AM roms.CardReader waitForCardDetails
+Nov 29, 2016 8:33:20 AM roms.CardReader waitForCardDetails
 FINE: cr1
-Nov 29, 2016 7:38:36 AM roms.BankClient makePayment
+Nov 29, 2016 8:33:20 AM roms.BankClient makePayment
 FINE: bc
-Nov 29, 2016 7:38:36 AM roms.BankClient waitForAuthorisation
+Nov 29, 2016 8:33:20 AM roms.BankClient waitForAuthorisation
 FINE: bc
-Nov 29, 2016 7:38:36 AM roms.ReceiptPrinter printReceipt
+Nov 29, 2016 8:33:20 AM roms.ReceiptPrinter printReceipt
 FINE: rp1
-Nov 29, 2016 7:38:36 AM roms.TestBasis checkTestResults
+Nov 29, 2016 8:33:20 AM roms.TestBasis checkTestResults
 INFO: EVENT LISTS EQUAL
 
 Expected output events:
@@ -386,5 +447,7 @@ Actual output events:
 1 21:33, ReceiptPrinter, rp1, takeReceipt, Total:, 34.55, AuthCode:, FGHI;
 
 TEST RESULTS
-Number of tests run: 6
-ALL TESTS PASSED
+Number of tests run: 7
+SOME TESTS FAILED
+Number of failed tests: 1
+removeAssertCheck(roms.SystemTest): Expected test to throw an instance of java.lang.AssertionError
