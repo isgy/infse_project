@@ -6,7 +6,10 @@ package roms;
 import java.util.ArrayList;
 import java.util.List;
 import java.lang.String;
+
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 /**
  * @author pbj
@@ -28,6 +31,19 @@ public class SystemTest extends TestBasis {
         input("1 18:00, PassButton, pb, press");
         expect("1 18:00, PassLight, pl, viewSwitchedOff");
         
+        runAndCheck();
+    } 
+   
+    
+    @Rule
+    public ExpectedException assertexception = ExpectedException.none(); //could also use an expected element in @Test  
+    
+    @Test 
+    public void removeAssertCheck() {
+        logger.info(makeBanner("removeAssertCheck"));
+        input("1 12:00, OfficeKVM, okvm, removeFromMenu, M2");	
+        assertexception.expect(AssertionError.class);
+        assertexception.expectMessage("item not on menu");        //will fail if different or no exception is thrown
         runAndCheck();
     } 
      
