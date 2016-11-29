@@ -35,18 +35,17 @@ public class SystemTest extends TestBasis {
     public void addshowMenu() {
     	logger.info(makeBanner("addshowMenu"));
      	input("1 12:00, OfficeKVM, okvm, addToMenu, M1, Fish, 7.95");
-     	input("1 12:00, OfficeKVM, okvm, showMenu");
+     //	input("1 12:00, OfficeKVM, okvm, showMenu");
      	input("1 12:00, OfficeKVM, okvm, addToMenu, M2, Veg Chili, 6.70");
      	input("1 12:00, OfficeKVM, okvm, addToMenu, D1, Soft Drink, 1.50");
      	input("1 12:00, OfficeKVM, okvm, addToMenu, D2, Wine, 3.25");  	
         input("1 12:00, OfficeKVM, okvm, removeFromMenu, M2");	
      	input("1 12:00, OfficeKVM, okvm, showMenu");
-        expect("1 12:00, OfficeKVM, okvm, viewMenu, tuples, 3");
-   //  	expect("ID, Description,      Price,");
-    // 	expect("D1,  Soft Drink,       1.50,");
-    // 	expect("D2,        Wine,       3.25");
-    // 	expect("M1,        Fish,       7.95;");
-     	
+        expect("1 12:00, OfficeKVM, okvm, viewMenu, tuples, 3,"
+                + "\n    ID, Description,      Price,"
+                + "\n    D1,  Soft Drink,       1.50,"
+                + "\n    D2,        Wine,       3.25,"
+     	        + "\n    M1,        Fish,       7.95");
  //    	String expected = "1 12:00, OfficeKVM, okvm, viewMenu, tuples, 3"
 //                        + '\n' + 
  //    			        "ID" + String.format("%18s", "Description") + String.format("%12s", "Price")
@@ -72,14 +71,12 @@ public class SystemTest extends TestBasis {
     	input("1 20:01, TableDisplay, td1, addMenuItem, M1");
     	input("1 20:01, TableDisplay, td1, addMenuItem, D1");
     	input("1 20:01, TableDisplay, td1, showTicket");
-   
-    	expect("1 20:01, TableDisplay, td1, viewTicket,"
-     	+ '\n'
-        + "ID, Description, Count" 
-		+ "\nD1,  Soft Drink,     1" 
-		+ "\nM1,        Fish,     2" 
-		+ "\nM2,   Veg Chili,     1");
-    	runAndCheck();
+    	expect("1 20:01, TableDisplay, td1, viewTicket, tuples, 3,"
+    			+ "\n    ID, Description, Count," 
+		        + "\n    D1,  Soft Drink,     1," 
+	        	+ "\n    M1,        Fish,     2,"   
+		        + "\n    M2,   Veg Chili,     1");
+          runAndCheck();
  }
  
      @Test
@@ -130,23 +127,23 @@ public class SystemTest extends TestBasis {
 
       //  input("1 20:02, TableDisplay, td1, submitOrder");
         expect("1 19:30, TableDisplay, td1, viewMenu, tuples, 3,"
-               + "\n    ID, Description,      Price,\n"
-               + "\n    B3,     Chicken,       5.05,"
-               + "\n    D1,  Soft Drink,       1.50,"
-               + "\n    D2,        Wine,       3.25,"
-               + "\n    D4,       Salad,       2.65,"
-               + "\n    M1,        Fish,       7.95,"
-               + "\n    M2,   Veg Chili,       6.70,"
-               + "a3,      Cheese,       4.25");
+               + "\n    ID, Description, Price,"
+               + "\n    B3,     Chicken,  5.05,"
+               + "\n    D1,  Soft Drink,  1.50,"
+               + "\n    D2,        Wine,  3.25,"
+               + "\n    D4,       Salad,  2.65,"
+               + "\n    M1,        Fish,  7.95,"
+               + "\n    M2,   Veg Chili,  6.70,"
+               + "    a3,      Cheese,  4.25");
         expect("1 20:00, TableDisplay, td1, viewTicket, tuples, 3,"
-               + "\n    ID, Description,        Count");
+               + "\n    ID, Description, Count");
         expect("1 23:00, TableDisplay, td1, viewTicket, tuples, 3,"
-               + "\n    ID, Description,       Count,"
-               + "\n    B3,     Chicken,          1, "
-               + "\n    D4,       Salad,          1,"
-               + "\n    M1,        Fish,          3,"
-               + "\n    M2,   Veg Chili,          1,"
-               + "\n    a3,      Cheese,          1");        
+               + "\n    ID, Description, Count,"
+               + "\n    B3,     Chicken,     1, "
+               + "\n    D4,       Salad,     1,"
+               + "\n    M1,        Fish,     3,"
+               + "\n    M2,   Veg Chili,     1,"
+               + "\n    a3,      Cheese,     1");        
         runAndCheck();
  }
    
