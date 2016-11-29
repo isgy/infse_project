@@ -116,7 +116,7 @@ public class Menu {
       for (Entry<String, MenuItem> menuitems : ents) {                          
     	  String id = menuitems.getKey();                                   //for each menuitem in menuitems, get the ID
     	  MenuItem item = menuitems.getValue();                             //now get the menuitem
-          String[] stringArray ={id, item.getDescription(), String.format("%5s", item.getPrice())};  //add description and right-align price
+          String[] stringArray ={id, item.getDescription(),    item.getPrice().toString()};  //add description and right-align price
           ss.addAll(Arrays.asList(stringArray));                         //all this is modified for toStrings in TicketItem.
           }
           return ss;
