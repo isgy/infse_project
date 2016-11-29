@@ -74,7 +74,8 @@ public class SystemTest extends TestBasis {
     	input("1 20:01, TableDisplay, td1, showTicket");
    
     	expect("1 20:01, TableDisplay, td1, viewTicket,"
-     	+ "\nID, Description, Count" 
+     	+ '\n'
+        + "ID, Description, Count" 
 		+ "\nD1,  Soft Drink,     1" 
 		+ "\nM1,        Fish,     2" 
 		+ "\nM2,   Veg Chili,     1");
@@ -98,6 +99,7 @@ public class SystemTest extends TestBasis {
         input("1 21:32, CardReader, cr1, acceptCardDetails, XYZ1234");
         input("1 21:33, BankClient, bc, acceptAuthorisationCode, ABCD");
    
+<<<<<<< HEAD
     	expect("1 21:30, TableDisplay, td1, approveBill, Total:, 24.10");
         expect("1 21:32, BankClient, bc, makePayment, XYZ1234, 24.10");
         expect("1 21:33, ReceiptPrinter, rp1, takeReceipt, Total:, 24.10, AuthCode:, ABCD");
@@ -147,6 +149,13 @@ public class SystemTest extends TestBasis {
                + "\n    M2,   Veg Chili,          1,"
                + "\n    a3,      Cheese,          1");        
         runAndCheck();
+=======
+    	expect("1 21:30, TableDisplay, td1, approveBill, Total:, 24.10;"
+        + '\n'
+        + "1 21:32, BankClient, bc, makePayment, XYZ1234, 24.10;"
+        + "\n1 21:33, ReceiptPrinter, rp1, takeReceipt, Total:, 24.10, AuthCode:, ABCD");
+    	runAndCheck();
+>>>>>>> refs/remotes/origin/master
  }
    
     /*   	input("1 12:00, OfficeKVM, okvm, addToMenu, M2, Veg Chili, 6.70;");
