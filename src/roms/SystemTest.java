@@ -66,7 +66,7 @@ public class SystemTest extends TestBasis {
         input("1 12:00, OfficeKVM, okvm, addToMenu, D1, Soft Drink, 1.50");
         input("1 12:00, OfficeKVM, okvm, addToMenu, D2, Wine, 3.25");
         input("1 20:00, TableDisplay, td1, startOrder");
-    	input("1 20:01, TableDisplay, td1, addMenuItem, M1");
+    	input("1 20:01, TableDisplay, td1, addMenuItem, M1");                   //same as test provided in Data
         input("1 20:01, TableDisplay, td1, addMenuItem, M2");
     	input("1 20:01, TableDisplay, td1, addMenuItem, M1");
     	input("1 20:01, TableDisplay, td1, addMenuItem, D1");
@@ -112,18 +112,24 @@ public class SystemTest extends TestBasis {
         input("1 12:00, OfficeKVM, okvm, addToMenu, D1, Soft Drink, 1.50");
         input("1 12:00, OfficeKVM, okvm, addToMenu, D2, Wine, 3.25");
     	input("1 19:00, TableDisplay, td1, startOrder");
+    	input("1 19:00, TableDisplay, td2, startOrder");            //to later add something not in td1
     	input("1 19:30, TableDisplay, td1, showMenu");
     	input("1 20:00, TableDisplay, td1, showTicket");
         input("1 20:01, TableDisplay, td1, addMenuItem, B3");
         input("1 20:01, TableDisplay, td1, addMenuItem, M2");
         input("1 20:01, TableDisplay, td1, addMenuItem, M1");
         input("1 21:01, TableDisplay, td1, addMenuItem, M1");
-        input("1 21:05, TableDisplay, td1, addMenuItem, M1");
+        input("1 21:05, TableDisplay, td2, addMenuItem, M1");       //count of M1 in td1's ticket should still be 2
         input("1 20:01, TableDisplay, td1, addMenuItem, a3");
         input("1 20:01, TableDisplay, td1, addMenuItem, D1");
         input("1 20:01, TableDisplay, td1, addMenuItem, D4");
-        input("1 21:01, TableDisplay, td1, removeMenuItem, D1");
+        input("1 21:01, TableDisplay, td1, removeMenuItem, D1");      //D1 should not be in the ticket
         input("1 23:00, TableDisplay, td1, showTicket");
+        
+        input("1 21:30, TableDisplay, td1, payBill");
+        input("1 21:32, CardReader, cr1, acceptCardDetails, ABC9876");
+        input("1 21:33, BankClient, bc, acceptAuthorisationCode, FGHI");
+        
 
       //  input("1 20:02, TableDisplay, td1, submitOrder");
         expect("1 19:30, TableDisplay, td1, viewMenu, tuples, 3,"
@@ -141,9 +147,12 @@ public class SystemTest extends TestBasis {
                + "\n    ID, Description, Count,"
                + "\n    B3,     Chicken,     1, "
                + "\n    D4,       Salad,     1,"
-               + "\n    M1,        Fish,     3,"
+               + "\n    M1,        Fish,     2,"
                + "\n    M2,   Veg Chili,     1,"
                + "\n    a3,      Cheese,     1");        
+        expect("1 21:30, TableDisplay, td1, approveBill, Total:, 34.55");    // this is  5.05 + 2.65 + (2*7.95) + 6.7 + 4.25 
+        expect("1 21:32, BankClient, bc, makePayment, ABC9876, 34.55");      // this covers all of use case 2
+        expect("1 21:33, ReceiptPrinter, rp1, takeReceipt, Total:, 34.55, AuthCode:, FGHI");
         runAndCheck();
  }
    
