@@ -66,16 +66,30 @@ public class SystemTest extends TestBasis {
         input("1 12:00, OfficeKVM, okvm, addToMenu, D1, Soft Drink, 1.50");
         input("1 12:00, OfficeKVM, okvm, addToMenu, D2, Wine, 3.25");
         input("1 20:00, TableDisplay, td1, startOrder");
+        input("1 21:24, TableDisplay, td2, startOrder");
+        input("1 21:40, TableDisplay, td2, addMenuItem, M2");
+        input("1 21:40, TableDisplay, td2, addMenuItem, D2");
+        input("1 23:00, OfficeKVM, okvm, addToMenu, d7, Cake, 1.05");           //adds new item to menu
+        input("1 23:30, TableDisplay, td2, addMenuItem, d7");
+        input("1 23:31, TableDisplay, td2, addMenuItem, d7");
     	input("1 20:01, TableDisplay, td1, addMenuItem, M1");                   //same as test provided in Data
         input("1 20:01, TableDisplay, td1, addMenuItem, M2");
     	input("1 20:01, TableDisplay, td1, addMenuItem, M1");
     	input("1 20:01, TableDisplay, td1, addMenuItem, D1");
     	input("1 20:01, TableDisplay, td1, showTicket");
+        input("1 23:33, TableDisplay, td2, showTicket");
+	
     	expect("1 20:01, TableDisplay, td1, viewTicket, tuples, 3,"
     			+ "\n    ID, Description, Count," 
 		        + "\n    D1,  Soft Drink,     1," 
 	        	+ "\n    M1,        Fish,     2,"   
 		        + "\n    M2,   Veg Chili,     1");
+    	expect("1 23:33, TableDisplay, td2, viewTicket, tuples, 3,"              //td2 should have it's own ticket
+    			+ "\n    ID, Description, Count," 
+		        + "\n    D2,        Wine,     1," 
+	        	+ "\n    M2,   Veg Chili,     1,"   
+		        + "\n    d7,        Cake,     2");
+
           runAndCheck();
  }
  
