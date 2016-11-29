@@ -20,6 +20,7 @@ public class Ticket {
     private String tableID;
     private Money total;
     private TreeMap<String, TicketItem> ticketmap;
+    
     public String getTableID() { 
         return tableID; 
     }
@@ -44,7 +45,12 @@ public class Ticket {
     public void removeFromTicket(MenuItem item){
     	String menuID = item.getmenuID();
     	if (ticketmap.containsKey(menuID)){
+    		if (ticketmap.get(menuID).getCount() == 1) {
+    			ticketmap.remove(menuID);
+    		}
+    		else {
     		ticketmap.get(menuID).rem();
+    		}
     	}
     }
     public Money getTotal(){

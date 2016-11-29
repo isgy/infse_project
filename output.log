@@ -1,11 +1,11 @@
-Nov 28, 2016 1:16:28 PM roms.OfficeKVM setMenu
+Nov 29, 2016 4:42:28 AM roms.OfficeKVM setMenu
 FINE: okvm
-Nov 28, 2016 1:16:28 PM roms.SystemTest addTicketPayBill
+Nov 29, 2016 4:42:28 AM roms.SystemTest addTicketPayBill
 INFO: 
 #############################################################
 TESTCASE: addTicketPayBill
 #############################################################
-Nov 28, 2016 1:16:28 PM roms.TestBasis run
+Nov 29, 2016 4:42:28 AM roms.TestBasis run
 INFO: 
 Input events:
 1 12:00, OfficeKVM, okvm, addToMenu, M1, Fish, 7.95;
@@ -20,64 +20,68 @@ Input events:
 1 20:02, TableDisplay, td1, submitOrder;
 1 21:30, TableDisplay, td1, payBill;
 1 21:32, CardReader, cr1, acceptCardDetails, XYZ1234;
-1 21:33, BankClient, bc, acceptAuthorisationCode, ABCD;;
+1 21:33, BankClient, bc, acceptAuthorisationCode, ABCD;
 
 Expected output events:
-1 21:30, TableDisplay, td1, approveBill, Total:, 24.101 21:32, BankClient, bc, makePayment, XYZ1234, 24.101 21:33, ReceiptPrinter, rp1, takeReceipt, Total:, 24.10, AuthCode:, ABCD;
+1 21:30, TableDisplay, td1, approveBill, Total:, 24.10;
+1 21:32, BankClient, bc, makePayment, XYZ1234, 24.10;
+1 21:33, ReceiptPrinter, rp1, takeReceipt, Total:, 24.10, AuthCode:, ABCD;
 
-Nov 28, 2016 1:16:28 PM roms.OfficeKVM addToMenu
+Nov 29, 2016 4:42:28 AM roms.OfficeKVM addToMenu
 FINE: okvm
-Nov 28, 2016 1:16:28 PM roms.OfficeKVM addToMenu
+Nov 29, 2016 4:42:28 AM roms.OfficeKVM addToMenu
 FINE: okvm
-Nov 28, 2016 1:16:28 PM roms.OfficeKVM addToMenu
+Nov 29, 2016 4:42:28 AM roms.OfficeKVM addToMenu
 FINE: okvm
-Nov 28, 2016 1:16:28 PM roms.OfficeKVM addToMenu
+Nov 29, 2016 4:42:28 AM roms.OfficeKVM addToMenu
 FINE: okvm
-Nov 28, 2016 1:16:28 PM roms.TableDisplay startOrder
+Nov 29, 2016 4:42:28 AM roms.TableDisplay startOrder
 FINE: td1
-Nov 28, 2016 1:16:28 PM roms.TableDisplay addMenuItem
+Nov 29, 2016 4:42:28 AM roms.TableDisplay addMenuItem
 FINE: td1
-Nov 28, 2016 1:16:28 PM roms.TableDisplay addMenuItem
+Nov 29, 2016 4:42:28 AM roms.TableDisplay addMenuItem
 FINE: td1
-Nov 28, 2016 1:16:28 PM roms.TableDisplay addMenuItem
+Nov 29, 2016 4:42:28 AM roms.TableDisplay addMenuItem
 FINE: td1
-Nov 28, 2016 1:16:28 PM roms.TableDisplay addMenuItem
+Nov 29, 2016 4:42:28 AM roms.TableDisplay addMenuItem
 FINE: td1
-Nov 28, 2016 1:16:28 PM roms.TableDisplay submitOrder
+Nov 29, 2016 4:42:28 AM roms.TableDisplay submitOrder
 FINE: td1
-Nov 28, 2016 1:16:28 PM roms.TableDisplay payBill
+Nov 29, 2016 4:42:28 AM roms.TableDisplay payBill
 FINE: td1
-Nov 28, 2016 1:16:28 PM roms.CardReader waitForCardDetails
+Nov 29, 2016 4:42:28 AM roms.CardReader waitForCardDetails
 FINE: cr1
-Nov 28, 2016 1:16:28 PM roms.BankClient makePayment
+Nov 29, 2016 4:42:28 AM roms.BankClient makePayment
 FINE: bc
-Nov 28, 2016 1:16:29 PM roms.BankClient waitForAuthorisation
+Nov 29, 2016 4:42:28 AM roms.BankClient waitForAuthorisation
 FINE: bc
-Nov 28, 2016 1:16:29 PM roms.ReceiptPrinter printReceipt
+Nov 29, 2016 4:42:28 AM roms.ReceiptPrinter printReceipt
 FINE: rp1
-Nov 28, 2016 1:16:29 PM roms.TestBasis checkTestResults
-WARNING: EVENT LISTS DIFFER AT POSITION 1
+Nov 29, 2016 4:42:28 AM roms.TestBasis checkTestResults
+INFO: EVENT LISTS EQUAL
 
 Expected output events:
-1 21:30, TableDisplay, td1, approveBill, Total:, 24.101 21:32, BankClient, bc, makePayment, XYZ1234, 24.101 21:33, ReceiptPrinter, rp1, takeReceipt, Total:, 24.10, AuthCode:, ABCD;
+1 21:30, TableDisplay, td1, approveBill, Total:, 24.10;
+1 21:32, BankClient, bc, makePayment, XYZ1234, 24.10;
+1 21:33, ReceiptPrinter, rp1, takeReceipt, Total:, 24.10, AuthCode:, ABCD;
 
 Actual output events:
 1 21:30, TableDisplay, td1, approveBill, Total:, 24.10;
 1 21:32, BankClient, bc, makePayment, XYZ1234, 24.10;
-1 21:33, ReceiptPrinter, rp1, takeReceipt, Total:, 24.10, AuthCode:, ABCD;;
+1 21:33, ReceiptPrinter, rp1, takeReceipt, Total:, 24.10, AuthCode:, ABCD;
 
-Nov 28, 2016 1:16:29 PM roms.OfficeKVM setMenu
+Nov 29, 2016 4:42:28 AM roms.OfficeKVM setMenu
 FINE: okvm
-Nov 28, 2016 1:16:29 PM roms.SystemTest addshowMenu
+Nov 29, 2016 4:42:28 AM roms.SystemTest addshowMenu
 INFO: 
 #############################################################
 TESTCASE: addshowMenu
 #############################################################
-Nov 28, 2016 1:16:29 PM roms.TestBasis run
+Nov 29, 2016 4:42:28 AM roms.TestBasis run
 INFO: 
 Input events:
 1 12:00, OfficeKVM, okvm, addToMenu, M1, Fish, 7.95;
-1 12:00, OfficeKVM, okvm, addToMenu, d2, Juice, 3.55;
+1 12:00, OfficeKVM, okvm, showMenu;
 1 12:00, OfficeKVM, okvm, addToMenu, M2, Veg Chili, 6.70;
 1 12:00, OfficeKVM, okvm, addToMenu, D1, Soft Drink, 1.50;
 1 12:00, OfficeKVM, okvm, addToMenu, D2, Wine, 3.25;
@@ -85,54 +89,50 @@ Input events:
 1 12:00, OfficeKVM, okvm, showMenu;
 
 Expected output events:
-1 12:00, OfficeKVM, okvm, viewMenu, ID       Description       Price
-D1       Soft Drink, 1.50
-D2             Wine, 3.25
-M1             Fish, 7.95
-d2            Juice, 3.55;
+1 12:00, OfficeKVM, okvm, viewMenu, tuples, 3;
 
-Nov 28, 2016 1:16:29 PM roms.OfficeKVM addToMenu
+Nov 29, 2016 4:42:28 AM roms.OfficeKVM addToMenu
 FINE: okvm
-Nov 28, 2016 1:16:29 PM roms.OfficeKVM addToMenu
+Nov 29, 2016 4:42:28 AM roms.OfficeKVM showMenu
 FINE: okvm
-Nov 28, 2016 1:16:29 PM roms.OfficeKVM addToMenu
+Nov 29, 2016 4:42:28 AM roms.OfficeKVM displayMenu
 FINE: okvm
-Nov 28, 2016 1:16:29 PM roms.OfficeKVM addToMenu
+Nov 29, 2016 4:42:28 AM roms.OfficeKVM addToMenu
 FINE: okvm
-Nov 28, 2016 1:16:29 PM roms.OfficeKVM addToMenu
+Nov 29, 2016 4:42:28 AM roms.OfficeKVM addToMenu
 FINE: okvm
-Nov 28, 2016 1:16:29 PM roms.OfficeKVM removeFromMenu
+Nov 29, 2016 4:42:28 AM roms.OfficeKVM addToMenu
 FINE: okvm
-Nov 28, 2016 1:16:29 PM roms.OfficeKVM showMenu
+Nov 29, 2016 4:42:28 AM roms.OfficeKVM removeFromMenu
 FINE: okvm
-Nov 28, 2016 1:16:29 PM roms.OfficeKVM dmenu
+Nov 29, 2016 4:42:28 AM roms.OfficeKVM showMenu
 FINE: okvm
-Nov 28, 2016 1:16:29 PM roms.TestBasis checkTestResults
+Nov 29, 2016 4:42:28 AM roms.OfficeKVM displayMenu
+FINE: okvm
+Nov 29, 2016 4:42:28 AM roms.TestBasis checkTestResults
 WARNING: EVENT LISTS DIFFER AT POSITION 1
 
 Expected output events:
-1 12:00, OfficeKVM, okvm, viewMenu, ID       Description       Price
-D1       Soft Drink, 1.50
-D2             Wine, 3.25
-M1             Fish, 7.95
-d2            Juice, 3.55;
+1 12:00, OfficeKVM, okvm, viewMenu, tuples, 3;
 
 Actual output events:
-1 12:00, OfficeKVM, okvm, viewMenu, 
-ID       Description       Price
-D1,      Soft Drink,       1.50
-D2,            Wine,       3.25
-M1,            Fish,       7.95
-d2,           Juice,       3.55;
+1 12:00, OfficeKVM, okvm, viewMenu, tuples, 3, 
+    ID, Description,      Price, 
+    M1,        Fish,       7.95;
+1 12:00, OfficeKVM, okvm, viewMenu, tuples, 3, 
+    ID, Description,      Price, 
+    D1,  Soft Drink,       1.50, 
+    D2,        Wine,       3.25, 
+    M1,        Fish,       7.95;
 
-Nov 28, 2016 1:16:29 PM roms.OfficeKVM setMenu
+Nov 29, 2016 4:42:28 AM roms.OfficeKVM setMenu
 FINE: okvm
-Nov 28, 2016 1:16:29 PM roms.SystemTest addshowTicket
+Nov 29, 2016 4:42:28 AM roms.SystemTest addshowTicket
 INFO: 
 #############################################################
 TESTCASE: addshowTicket
 #############################################################
-Nov 28, 2016 1:16:29 PM roms.TestBasis run
+Nov 29, 2016 4:42:28 AM roms.TestBasis run
 INFO: 
 Input events:
 1 12:00, OfficeKVM, okvm, addToMenu, M1, Fish, 7.95;
@@ -147,49 +147,57 @@ Input events:
 1 20:01, TableDisplay, td1, showTicket;
 
 Expected output events:
-1 20:01, TableDisplay, td1, viewTicket, ID, Description, CountD1, Soft Drink, 1M1, Fish, 2M2, Veg Chili, 1;
+1 20:01, TableDisplay, td1, viewTicket, ID, Description, Count
+D1, Soft Drink, 1
+M1, Fish, 2
+M2, Veg Chili, 1;
 
-Nov 28, 2016 1:16:29 PM roms.OfficeKVM addToMenu
+Nov 29, 2016 4:42:28 AM roms.OfficeKVM addToMenu
 FINE: okvm
-Nov 28, 2016 1:16:29 PM roms.OfficeKVM addToMenu
+Nov 29, 2016 4:42:28 AM roms.OfficeKVM addToMenu
 FINE: okvm
-Nov 28, 2016 1:16:29 PM roms.OfficeKVM addToMenu
+Nov 29, 2016 4:42:28 AM roms.OfficeKVM addToMenu
 FINE: okvm
-Nov 28, 2016 1:16:29 PM roms.OfficeKVM addToMenu
+Nov 29, 2016 4:42:28 AM roms.OfficeKVM addToMenu
 FINE: okvm
-Nov 28, 2016 1:16:29 PM roms.TableDisplay startOrder
+Nov 29, 2016 4:42:28 AM roms.TableDisplay startOrder
 FINE: td1
-Nov 28, 2016 1:16:29 PM roms.TableDisplay addMenuItem
+Nov 29, 2016 4:42:28 AM roms.TableDisplay addMenuItem
 FINE: td1
-Nov 28, 2016 1:16:29 PM roms.TableDisplay addMenuItem
+Nov 29, 2016 4:42:28 AM roms.TableDisplay addMenuItem
 FINE: td1
-Nov 28, 2016 1:16:29 PM roms.TableDisplay addMenuItem
+Nov 29, 2016 4:42:28 AM roms.TableDisplay addMenuItem
 FINE: td1
-Nov 28, 2016 1:16:29 PM roms.TableDisplay addMenuItem
+Nov 29, 2016 4:42:28 AM roms.TableDisplay addMenuItem
 FINE: td1
-Nov 28, 2016 1:16:29 PM roms.TableDisplay showTicket
+Nov 29, 2016 4:42:28 AM roms.TableDisplay showTicket
 FINE: td1
-Nov 28, 2016 1:16:29 PM roms.TestBasis checkTestResults
+Nov 29, 2016 4:42:28 AM roms.TableDisplay displayTicket
+FINE: td1
+Nov 29, 2016 4:42:28 AM roms.TestBasis checkTestResults
 WARNING: EVENT LISTS DIFFER AT POSITION 1
 
 Expected output events:
-1 20:01, TableDisplay, td1, viewTicket, ID, Description, CountD1, Soft Drink, 1M1, Fish, 2M2, Veg Chili, 1;
+1 20:01, TableDisplay, td1, viewTicket, ID, Description, Count
+D1, Soft Drink, 1
+M1, Fish, 2
+M2, Veg Chili, 1;
 
 Actual output events:
-1 20:01, TableDisplay, td1, viewTicket, 
-ID       Description       Count
-D1,      Soft Drink,          1
-M1,            Fish,          2
-M2,       Veg Chili,          1;
+1 20:01, TableDisplay, td1, viewTicket, tuples, 3, 
+    ID, Description,      Count, 
+    D1,  Soft Drink,          1, 
+    M1,        Fish,          2, 
+    M2,   Veg Chili,          1;
 
-Nov 28, 2016 1:16:29 PM roms.OfficeKVM setMenu
+Nov 29, 2016 4:42:28 AM roms.OfficeKVM setMenu
 FINE: okvm
-Nov 28, 2016 1:16:29 PM roms.SystemTest cancelReadyUpLight
+Nov 29, 2016 4:42:28 AM roms.SystemTest cancelReadyUpLight
 INFO: 
 #############################################################
 TESTCASE: cancelReadyUpLight
 #############################################################
-Nov 28, 2016 1:16:29 PM roms.TestBasis run
+Nov 29, 2016 4:42:28 AM roms.TestBasis run
 INFO: 
 Input events:
 1 18:00, PassButton, pb, press;
@@ -197,11 +205,11 @@ Input events:
 Expected output events:
 1 18:00, PassLight, pl, viewSwitchedOff;
 
-Nov 28, 2016 1:16:29 PM roms.PassButton press
+Nov 29, 2016 4:42:28 AM roms.PassButton press
 FINE: pb
-Nov 28, 2016 1:16:29 PM roms.PassLight switchOff
+Nov 29, 2016 4:42:28 AM roms.PassLight switchOff
 FINE: pl
-Nov 28, 2016 1:16:29 PM roms.TestBasis checkTestResults
+Nov 29, 2016 4:42:28 AM roms.TestBasis checkTestResults
 INFO: EVENT LISTS EQUAL
 
 Expected output events:
@@ -210,23 +218,193 @@ Expected output events:
 Actual output events:
 1 18:00, PassLight, pl, viewSwitchedOff;
 
+Nov 29, 2016 4:42:28 AM roms.OfficeKVM setMenu
+FINE: okvm
+Nov 29, 2016 4:42:28 AM roms.SystemTest addRemoveTicketPayBill
+INFO: 
+#############################################################
+TESTCASE: addRemoveTicketPayBill
+#############################################################
+Nov 29, 2016 4:42:28 AM roms.TestBasis run
+INFO: 
+Input events:
+1 09:00, OfficeKVM, okvm, addToMenu, D4, Salad, 2.65;
+1 09:00, OfficeKVM, okvm, addToMenu, a3, Cheese, 4.25;
+1 09:30, OfficeKVM, okvm, addToMenu, B3, Chicken, 5.05;
+1 10:50, OfficeKVM, okvm, addToMenu, M1, Fish, 7.95;
+1 12:00, OfficeKVM, okvm, addToMenu, M2, Veg Chili, 6.70;
+1 12:00, OfficeKVM, okvm, addToMenu, D1, Soft Drink, 1.50;
+1 12:00, OfficeKVM, okvm, addToMenu, D2, Wine, 3.25;
+1 19:00, TableDisplay, td1, startOrder;
+1 19:30, TableDisplay, td1, showMenu;
+1 20:00, TableDisplay, td1, showTicket;
+1 20:01, TableDisplay, td1, addMenuItem, B3;
+1 20:01, TableDisplay, td1, addMenuItem, M2;
+1 20:01, TableDisplay, td1, addMenuItem, M1;
+1 21:01, TableDisplay, td1, addMenuItem, M1;
+1 21:05, TableDisplay, td1, addMenuItem, M1;
+1 20:01, TableDisplay, td1, addMenuItem, a3;
+1 20:01, TableDisplay, td1, addMenuItem, D1;
+1 20:01, TableDisplay, td1, addMenuItem, D4;
+1 21:01, TableDisplay, td1, removeMenuItem, D1;
+1 23:00, TableDisplay, td1, showTicket;
+
+Expected output events:
+1 19:30, TableDisplay, td1, viewMenu, tuples, 3, 
+    ID, Description, Price, 
+    B3,     Chicken,  5.05, 
+    D1,  Soft Drink,  1.50, 
+    D2,        Wine,  3.25, 
+    D4,       Salad,  2.65, 
+    M1,        Fish,  7.95, 
+    M2,   Veg Chili,  6.70, 
+    a3,      Cheese, 4.25;;
+1 20:00, TableDisplay, td1, viewTicket, tuples, 3, 
+    ID, Description, Count;;
+1 23:00, TableDisplay, td1, viewTicket, tuples, 3, 
+    ID, Description, Count, 
+    B3,     Chicken,     1, 
+    D4,       Salad,     1, 
+    M1,        Fish,     3, 
+    M2,   Veg Chili,     1, 
+    a3,      Cheese,     1;
+
+Nov 29, 2016 4:42:28 AM roms.OfficeKVM addToMenu
+FINE: okvm
+Nov 29, 2016 4:42:28 AM roms.OfficeKVM addToMenu
+FINE: okvm
+Nov 29, 2016 4:42:28 AM roms.OfficeKVM addToMenu
+FINE: okvm
+Nov 29, 2016 4:42:28 AM roms.OfficeKVM addToMenu
+FINE: okvm
+Nov 29, 2016 4:42:28 AM roms.OfficeKVM addToMenu
+FINE: okvm
+Nov 29, 2016 4:42:28 AM roms.OfficeKVM addToMenu
+FINE: okvm
+Nov 29, 2016 4:42:28 AM roms.OfficeKVM addToMenu
+FINE: okvm
+Nov 29, 2016 4:42:28 AM roms.TableDisplay startOrder
+FINE: td1
+Nov 29, 2016 4:42:28 AM roms.TableDisplay showMenu
+FINE: td1
+Nov 29, 2016 4:42:28 AM roms.TableDisplay displayMenu
+FINE: td1
+Nov 29, 2016 4:42:28 AM roms.TableDisplay showTicket
+FINE: td1
+Nov 29, 2016 4:42:28 AM roms.TableDisplay displayTicket
+FINE: td1
+Nov 29, 2016 4:42:28 AM roms.TableDisplay addMenuItem
+FINE: td1
+Nov 29, 2016 4:42:28 AM roms.TableDisplay addMenuItem
+FINE: td1
+Nov 29, 2016 4:42:28 AM roms.TableDisplay addMenuItem
+FINE: td1
+Nov 29, 2016 4:42:28 AM roms.TableDisplay addMenuItem
+FINE: td1
+Nov 29, 2016 4:42:28 AM roms.TableDisplay addMenuItem
+FINE: td1
+Nov 29, 2016 4:42:28 AM roms.TableDisplay addMenuItem
+FINE: td1
+Nov 29, 2016 4:42:28 AM roms.TableDisplay addMenuItem
+FINE: td1
+Nov 29, 2016 4:42:28 AM roms.TableDisplay addMenuItem
+FINE: td1
+Nov 29, 2016 4:42:28 AM roms.TableDisplay removeMenuItem
+FINE: td1
+Nov 29, 2016 4:42:28 AM roms.TableDisplay showTicket
+FINE: td1
+Nov 29, 2016 4:42:28 AM roms.TableDisplay displayTicket
+FINE: td1
+Nov 29, 2016 4:42:28 AM roms.TestBasis checkTestResults
+WARNING: EVENT LISTS DIFFER AT POSITION 1
+
+Expected output events:
+1 19:30, TableDisplay, td1, viewMenu, tuples, 3, 
+    ID, Description, Price, 
+    B3,     Chicken,  5.05, 
+    D1,  Soft Drink,  1.50, 
+    D2,        Wine,  3.25, 
+    D4,       Salad,  2.65, 
+    M1,        Fish,  7.95, 
+    M2,   Veg Chili,  6.70, 
+    a3,      Cheese, 4.25;;
+1 20:00, TableDisplay, td1, viewTicket, tuples, 3, 
+    ID, Description, Count;;
+1 23:00, TableDisplay, td1, viewTicket, tuples, 3, 
+    ID, Description, Count, 
+    B3,     Chicken,     1, 
+    D4,       Salad,     1, 
+    M1,        Fish,     3, 
+    M2,   Veg Chili,     1, 
+    a3,      Cheese,     1;
+
+Actual output events:
+1 19:30, TableDisplay, td1, viewMenu, tuples, 3, 
+    ID, Description,      Price, 
+    B3,     Chicken,       5.05, 
+    D1,  Soft Drink,       1.50, 
+    D2,        Wine,       3.25, 
+    D4,       Salad,       2.65, 
+    M1,        Fish,       7.95, 
+    M2,   Veg Chili,       6.70, 
+    a3,      Cheese,       4.25;
+1 20:00, TableDisplay, td1, viewTicket, tuples, 3, 
+    ID, Description, Count;
+1 23:00, TableDisplay, td1, viewTicket, tuples, 3, 
+    ID, Description,      Count, 
+    B3,     Chicken,          1, 
+    D4,       Salad,          1, 
+    M1,        Fish,          3, 
+    M2,   Veg Chili,          1, 
+    a3,      Cheese,          1;
+
 TEST RESULTS
-Number of tests run: 5
+Number of tests run: 6
 SOME TESTS FAILED
 Number of failed tests: 3
-addTicketPayBill(roms.SystemTest): expected:<[1 21:30, TableDisplay, td1, approveBill, Total:, 24.101 21:32, BankClient, bc, makePayment, XYZ1234, 24.101 21:33, ReceiptPrinter, rp1, takeReceipt, Total:, 24.10, AuthCode:, ABCD]> but was:<[1 21:30, TableDisplay, td1, approveBill, Total:, 24.10, 1 21:32, BankClient, bc, makePayment, XYZ1234, 24.10, 1 21:33, ReceiptPrinter, rp1, takeReceipt, Total:, 24.10, AuthCode:, ABCD;]>
-addshowMenu(roms.SystemTest): expected:<[1 12:00, OfficeKVM, okvm, viewMenu, ID       Description       Price
-D1       Soft Drink, 1.50
-D2             Wine, 3.25
-M1             Fish, 7.95
-d2            Juice, 3.55]> but was:<[1 12:00, OfficeKVM, okvm, viewMenu, 
-ID       Description       Price
-D1,      Soft Drink,       1.50
-D2,            Wine,       3.25
-M1,            Fish,       7.95
-d2,           Juice,       3.55]>
-addshowTicket(roms.SystemTest): expected:<[1 20:01, TableDisplay, td1, viewTicket, ID, Description, CountD1, Soft Drink, 1M1, Fish, 2M2, Veg Chili, 1]> but was:<[1 20:01, TableDisplay, td1, viewTicket, 
-ID       Description       Count
-D1,      Soft Drink,          1
-M1,            Fish,          2
-M2,       Veg Chili,          1]>
+addshowMenu(roms.SystemTest): expected:<[1 12:00, OfficeKVM, okvm, viewMenu, tuples, 3]> but was:<[1 12:00, OfficeKVM, okvm, viewMenu, tuples, 3, 
+    ID, Description,      Price, 
+    M1,        Fish,       7.95, 1 12:00, OfficeKVM, okvm, viewMenu, tuples, 3, 
+    ID, Description,      Price, 
+    D1,  Soft Drink,       1.50, 
+    D2,        Wine,       3.25, 
+    M1,        Fish,       7.95]>
+addshowTicket(roms.SystemTest): expected:<[1 20:01, TableDisplay, td1, viewTicket, ID, Description, Count
+D1, Soft Drink, 1
+M1, Fish, 2
+M2, Veg Chili, 1]> but was:<[1 20:01, TableDisplay, td1, viewTicket, tuples, 3, 
+    ID, Description,      Count, 
+    D1,  Soft Drink,          1, 
+    M1,        Fish,          2, 
+    M2,   Veg Chili,          1]>
+addRemoveTicketPayBill(roms.SystemTest): expected:<[1 19:30, TableDisplay, td1, viewMenu, tuples, 3, 
+    ID, Description, Price, 
+    B3,     Chicken,  5.05, 
+    D1,  Soft Drink,  1.50, 
+    D2,        Wine,  3.25, 
+    D4,       Salad,  2.65, 
+    M1,        Fish,  7.95, 
+    M2,   Veg Chili,  6.70, 
+    a3,      Cheese, 4.25;, 1 20:00, TableDisplay, td1, viewTicket, tuples, 3, 
+    ID, Description, Count;, 1 23:00, TableDisplay, td1, viewTicket, tuples, 3, 
+    ID, Description, Count, 
+    B3,     Chicken,     1, 
+    D4,       Salad,     1, 
+    M1,        Fish,     3, 
+    M2,   Veg Chili,     1, 
+    a3,      Cheese,     1]> but was:<[1 19:30, TableDisplay, td1, viewMenu, tuples, 3, 
+    ID, Description,      Price, 
+    B3,     Chicken,       5.05, 
+    D1,  Soft Drink,       1.50, 
+    D2,        Wine,       3.25, 
+    D4,       Salad,       2.65, 
+    M1,        Fish,       7.95, 
+    M2,   Veg Chili,       6.70, 
+    a3,      Cheese,       4.25, 1 20:00, TableDisplay, td1, viewTicket, tuples, 3, 
+    ID, Description, Count, 1 23:00, TableDisplay, td1, viewTicket, tuples, 3, 
+    ID, Description,      Count, 
+    B3,     Chicken,          1, 
+    D4,       Salad,          1, 
+    M1,        Fish,          3, 
+    M2,   Veg Chili,          1, 
+    a3,      Cheese,          1]>

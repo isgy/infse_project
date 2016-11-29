@@ -85,6 +85,7 @@ public class Menu {
      * @param menuID
      */
     public void removeFromMenu(String menuID) {
+    	assert menuitems.containsKey(menuID) : "item not on menu";
         menuitems.remove(menuID);
     }
     /**

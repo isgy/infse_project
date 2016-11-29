@@ -14,8 +14,8 @@ import java.util.List;
  *
  */
 public class Rack {
-    private ArrayList<Ticket> rack;
-    
+    private ArrayList<RackEntry> rack;
+      
     /**
      * Format rack contents as list of strings, with, per order item in each
      * order, 6 strings for respectively:

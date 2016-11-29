@@ -133,6 +133,16 @@ public class Clock extends AbstractInputDevice {
     /*
      * FIELD(S) AND SETTER(S) FOR MESSAGE DESTINATIONS
      */
+    private KitchenDisplay kdisp;
+    private Rack rack;
+    
+    public void setRack(Rack rack){
+    	this.rack = rack;
+    }
+    
+    public void setDisp(KitchenDisplay kdisp) {
+    	this.kdisp = kdisp;
+    }
     
     /*
      * SUPPORT FOR TRIGGER INPUT MESSAGES
@@ -140,10 +150,7 @@ public class Clock extends AbstractInputDevice {
 
     public void tick() {
         logger.fine(getInstanceName());
-        
-        // TO BE COMPLETED
-        //  E.g. add calls to objects that need to be notified of ticks.
-        
+        kdisp.displayRack(rack); 
     }
     
     /*
